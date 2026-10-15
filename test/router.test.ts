@@ -3,9 +3,10 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import {
   buildMatrix, classify, extractFeatures, flattenTree, normalizeModelName, normalizeValue, privateScores, route,
-  segment, selectModel, BENCHMARKS, DEFAULT_MODELS, DEFAULT_POLICY, mergeScores,
+  segment, selectModel, BENCHMARKS, DEFAULT_POLICY, mergeScores, buildCatalog, parseModelName, prettyLabel, cliIdToKey,
 } from '../src/index.ts';
-import { parseCodesota, parseSeal, toScores, arenaScores } from '../src/refresh/sources.ts';
+import { parseCodesota, parseSeal, aggregateScores, arenaRaw, type RawRow } from '../src/refresh/sources.ts';
+import { parseAgyModels, parseGrokModels, parseCodexCache, parseTomlModelTables } from '../src/refresh/discover.ts';
 import { invocationFor } from '../src/cli/adapters.ts';
 import type { ModelRow, Score } from '../src/types.ts';
 
@@ -15,8 +16,8 @@ const fx = (n: string) => fs.readFileSync(new URL(`./fixtures/${n}`, import.meta
 const MODELS: ModelRow[] = [
   { id: 'a-big', label: 'A Big', vendor: 'A', family: 'a', aliases: [], routes: [{ provider: 'alpha', model: 'big' }], costTier: 'subscription', relativeCost: 5 },
   { id: 'a-small', label: 'A Small', vendor: 'A', family: 'a', aliases: [], routes: [{ provider: 'alpha', model: 'small' }], costTier: 'subscription', relativeCost: 1 },
-  { id: 'b-pro', label: 'B Pro', vendor: 'B', family: 'b', aliases: [], routes: [{ provider: 'beta', model: 'pro' }], costTier: 'metered', relativeCost: 3 },
-  { id: 'b-next', label: 'B Next', vendor: 'B', family: 'b', inheritsFrom: 'b-pro', aliases: [], routes: [{ provider: 'beta', model: 'next' }], costTier: 'metered', relativeCost: 3 },
+  { id: 'b-pro', label: 'B Pro', vendor: 'B', family: 'b', version: [1], aliases: [], routes: [{ provider: 'beta', model: 'pro' }], costTier: 'metered', relativeCost: 3 },
+  { id: 'b-next', label: 'B Next', vendor: 'B', family: 'b', version: [2], inheritsFrom: 'b-pro', aliases: [], routes: [{ provider: 'beta', model: 'next' }], costTier: 'metered', relativeCost: 3 },
   { id: 'img', label: 'Img', vendor: 'B', family: 'img', aliases: [], routes: [{ provider: 'beta', model: 'pro', modalities: ['image'] }], costTier: 'metered', relativeCost: 2 },
 ];
 const S = (model: string, benchmark: string, value: number): Score => ({ model, benchmark, value, source: 'test', asOf: '2026-10-01' });
@@ -97,11 +98,27 @@ test('select: availability filter and exclusions', () => {
   assert.notEqual(x.chosen?.model, 'a-big');
 });
 
-test('select: lineage inheritance fills a missing score and is flagged', () => {
+test('select: lineage inheritance fills a missing score; the newer version supersedes a not-significantly-better older one', () => {
   const c = selectModel('coding', M, { ...DEFAULT_POLICY, objective: 'quality' });
   const next = c.candidates.find((x) => x.model === 'b-next')!;
+  const pro = c.candidates.find((x) => x.model === 'b-pro')!;
   assert.ok(next.inherited.includes('swe-bench-pro'));
   assert.ok(!next.excluded);
+  assert.match(pro.excluded || '', /superseded by B Next/);
+});
+
+test('select: an older version that is significantly better keeps its place', () => {
+  const scores = [...SCORES, S('b-next', 'swe-bench-pro', 20)];
+  const m = buildMatrix({ models: MODELS, scores, generatedAt: 'x' });
+  const pro = selectModel('coding', m, { ...DEFAULT_POLICY, objective: 'quality' }).candidates.find((x) => x.model === 'b-pro')!;
+  assert.ok(!pro.excluded, 'a 30-point lead is not noise');
+});
+
+test('select: advisory categories default to quality, not cost', () => {
+  const scores = [S('a-big', 'arena-legal', 1500), S('a-small', 'arena-legal', 1490)];
+  const m = buildMatrix({ models: MODELS, scores, generatedAt: 'x' });
+  assert.equal(selectModel('legal', m).chosen?.model, 'a-big');
+  assert.equal(selectModel('legal', m, { ...DEFAULT_POLICY, advisoryObjective: undefined }).chosen?.model, 'a-small');
 });
 
 test('select: elo normalisation — leader 100, -31 points ≈ 91', () => {
@@ -138,24 +155,56 @@ test('names: leaderboard spellings collapse to one key', () => {
 test('parsers: codesota + SEAL fixtures', () => {
   const tb = parseCodesota(fx('codesota-terminal-bench-2.html'));
   assert.equal(tb.length, 20);
-  assert.deepEqual(tb[0], { name: 'Codex / GPT-5.5', value: 82, date: '2026-04-01', source: 'terminal-bench-official' });
-  const tbScores = toScores(tb, 'terminal-bench-2', DEFAULT_MODELS, { source: 's', today: '2026-10-15', aggregate: 'median' });
-  const opus46 = tbScores.scores.find((s) => s.model === 'claude-opus-4.6')!;
-  // Opus 4.6 appears under 8 agents (79.8 … 66.9) — the median is what we keep.
-  assert.ok(opus46.value > 70 && opus46.value < 75, String(opus46.value));
+  assert.equal(tb[0].value, 82);
+  // One model appears under several agents: aggregate = median.
+  const raw: RawRow[] = tb.map((r) => ({ benchmark: 'terminal-bench-2', name: r.name, value: r.value, date: r.date, source: 's', aggregate: 'median' }));
+  const keys = new Set(raw.map((r) => normalizeModelName(r.name)));
+  const scores = aggregateScores(raw, keys, '2026-10-15');
+  const multi = [...keys].find((k) => raw.filter((r) => normalizeModelName(r.name) === k).length >= 3)!;
+  const vals = raw.filter((r) => normalizeModelName(r.name) === multi).map((r) => r.value).sort((a, b) => a - b);
+  assert.equal(scores.find((s) => s.model === multi)!.value, vals.length % 2 ? vals[(vals.length - 1) / 2] : (vals[vals.length / 2 - 1] + vals[vals.length / 2]) / 2);
   assert.ok(parseCodesota(fx('codesota-gpqa.html')).length >= 15);
   assert.ok(parseCodesota(fx('codesota-swe-bench-verified.html')).length >= 20);
 });
 
-test('arena: picks the configured category and takes the best variant per model', () => {
+test('arena: configured category only; best variant per model keeps its CI', () => {
   const rows = new Map([['webdev', [
-    { model_name: 'claude-opus-5.5-max', rating: 1811, category: 'overall', leaderboard_publish_date: '2026-10-13' },
-    { model_name: 'claude-opus-5.5-high', rating: 1790, category: 'overall', leaderboard_publish_date: '2026-10-13' },
-    { model_name: 'claude-opus-5.5-max', rating: 1700, category: 'webdev-html', leaderboard_publish_date: '2026-10-13' },
+    { model_name: 'acme-pro-2.0-max', rating: 1811, rating_lower: 1800, rating_upper: 1822, category: 'overall', leaderboard_publish_date: '2026-10-13' },
+    { model_name: 'acme-pro-2.0-high', rating: 1790, category: 'overall', leaderboard_publish_date: '2026-10-13' },
+    { model_name: 'acme-pro-2.0-max', rating: 1700, category: 'webdev-html', leaderboard_publish_date: '2026-10-13' },
   ]]]);
-  const r = arenaScores(rows, DEFAULT_MODELS, '2026-10-15');
-  const s = r.scores.filter((x) => x.benchmark === 'arena-webdev');
-  assert.deepEqual(s.map((x) => [x.model, x.value]), [['claude-opus-5.5', 1811]]);
+  const s = aggregateScores(arenaRaw(rows), new Set(['acme-pro-2-0']), '2026-10-15');
+  assert.deepEqual(s.map((x) => [x.model, x.benchmark, x.value, x.ci]), [['acme-pro-2-0', 'arena-webdev', 1811, 11]]);
+});
+
+test('catalog: built from board names + CLI lists — no model list in code', () => {
+  // Fixture names only: the catalog logic itself knows no versions.
+  const models = buildCatalog({
+    boardNames: ['claude-opus-9-1-max', 'Claude Opus 9', 'claude-opus-8', 'gemini-12-flash-high', 'gemini-11-flash', 'acme-ultra-3'],
+    cliModels: [
+      { provider: 'gemini', id: 'gemini-12-flash-high' }, { provider: 'gemini', id: 'gemini-12-flash-low' },
+      { provider: 'kimi', id: 'kimi-code/k9' },
+    ],
+    keep: (k) => k === 'acme-ultra-3',
+  });
+  const by = new Map(models.map((m) => [m.id, m]));
+  assert.deepEqual(by.get('claude-opus-9-1')!.routes, [{ provider: 'claude', model: 'claude-opus-9-1' }], 'pattern rule routes Claude to claude');
+  assert.equal(by.get('claude-opus-9-1')!.inheritsFrom, 'claude-opus-9', 'lineage computed from versions');
+  assert.equal(by.get('claude-opus-9')!.routes.length, 1, 'second-newest version still routable');
+  assert.equal(by.get('claude-opus-8')?.routes.length ?? 0, 0, 'older versions get no pattern route');
+  assert.deepEqual(by.get('gemini-12-flash')!.routes, [{ provider: 'gemini', model: 'gemini-12-flash-high' }], 'preferred effort variant');
+  assert.equal(by.get('gemini-12-flash')!.inheritsFrom, 'gemini-11-flash');
+  assert.ok(by.has('kimi-k9') && by.get('kimi-k9')!.routes[0].model === 'kimi-code/k9');
+  assert.ok(by.has('acme-ultra-3'), 'top-of-board models kept for context');
+  assert.equal(prettyLabel(parseModelName('claude-opus-9-1-max')), 'Claude Opus 9.1');
+  assert.equal(cliIdToKey('kimi', 'kimi-code/k9'), 'kimi-k9');
+});
+
+test('discover: CLI model-list parsers', () => {
+  assert.deepEqual(parseAgyModels('Fetching available models...\nm-1-high\tM 1 (High)\nm-1-low\tM 1 (Low)\n'), ['m-1-high', 'm-1-low']);
+  assert.deepEqual(parseGrokModels('Available models:\n  * g-2 (default)\n  - g-1\n'), ['g-2', 'g-1']);
+  assert.deepEqual(parseCodexCache(JSON.stringify({ models: [{ slug: 'x-1', visibility: 'list' }, { slug: 'x-0', visibility: 'hide' }] })), ['x-1']);
+  assert.deepEqual(parseTomlModelTables('[models."kimi-code/k9"]\nmodel = "k9"\n'), ['kimi-code/k9']);
 });
 
 test('merge: newer asOf wins; partial refresh keeps old numbers', () => {

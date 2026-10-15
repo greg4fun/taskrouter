@@ -9,7 +9,7 @@ export {
   BENCHMARKS, DEFAULT_WEIGHTS, aliasIndex, benchmarkKey, buildMatrix, fnv1a, matrixVersion, mergeScores,
   normalizeModelName, normalizeValue, stableJson,
 } from './matrix.ts';
-export { DEFAULT_MODELS } from './models.ts';
+export { buildCatalog, parseModelName, prettyLabel, compareVersions, patternRoutes, cliIdToKey, COST_RULES, PROVIDER_TIER, type CliModel } from './catalog.ts';
 export { DEFAULT_POLICY, selectModel } from './select.ts';
 export { STAGE, segment, splitTask } from './split.ts';
 export { route, summarize, type RouteOptions } from './route.ts';

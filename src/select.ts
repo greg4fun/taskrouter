@@ -5,13 +5,18 @@
 //   adjusted          = score · (0.5 + 0.5 · coverage)
 //
 // v_b is the normalised value (matrix.normalizeValue). A model with no number
-// on a benchmark uses its predecessor's (`inheritsFrom` chain), flagged. A
-// model with zero coverage is never picked. Then, by policy:
+// on a benchmark uses its predecessor's (`inheritsFrom` chain, computed by the
+// catalog), flagged. A model with zero coverage is never picked.
 //
-//   quality  — highest adjusted score.
-//   balanced — among candidates within `margin` points of the top, the cheapest
-//              (cost tier, then relativeCost); ties → higher score → id.
-//   cost     — among candidates at or above `floor`, the cheapest; none → top.
+// Noise: boards publish confidence intervals. Within a family, an older version
+// is dropped unless it beats the newest by more than their combined interval
+// (supersession), so board noise never picks last year's model. Ties with the
+// top are judged on policy.margin. Advisory categories use advisoryObjective.
+//
+//   quality  — the tied pool, newest version of a family first, then score.
+//   balanced — the tied pool, cheapest (tier, relativeCost), then newest
+//              version within the same family, then score, then id.
+//   cost     — candidates at or above `floor`, cheapest; none → top.
 //
 // Fallbacks: the best candidate on a different provider first (an outage or
 // quota wall on the chosen provider must not take the fallback down too), then
@@ -26,6 +31,7 @@ const TIER_RANK = { local: 0, subscription: 1, metered: 2 } as const;
 export const DEFAULT_POLICY: Policy = {
   objective: 'balanced',
   margin: 3,
+  advisoryObjective: 'quality',
   floor: 60,
   split: true,
   splitShare: 0.5,
@@ -43,6 +49,22 @@ function scoreIndex(scores: readonly Score[]): Map<string, Score> {
     if (!cur || s.asOf > cur.asOf || (s.asOf === cur.asOf && s.value > cur.value)) idx.set(k, s);
   }
   return idx;
+}
+
+/** Normalised half-width of a CI around `value` (how many normalised points the raw CI spans). */
+function normalisedCi(b: Parameters<typeof normalizeValue>[0], s: Score, top: number): number {
+  if (!s.ci || !(s.ci > 0)) return 0;
+  return Math.abs(normalizeValue(b, s.value, top) - normalizeValue(b, s.value - s.ci, top));
+}
+
+/** Newer version of the same family sorts first; across families: no opinion. */
+function newer(a: Candidate, b: Candidate): number {
+  if (!a.family || a.family !== b.family || !a.version || !b.version) return 0;
+  for (let i = 0; i < Math.max(a.version.length, b.version.length); i++) {
+    const d = (b.version[i] ?? 0) - (a.version[i] ?? 0);
+    if (d) return d;
+  }
+  return 0;
 }
 
 function lookup(model: ModelRow, bench: string, idx: Map<string, Score>, byId: Map<string, ModelRow>): { score: Score; inherited: boolean } | null {
@@ -93,7 +115,7 @@ export function selectModel(category: CategoryId, matrix: Matrix, policy: Policy
   for (const model of [...matrix.models].sort((a, b) => a.id.localeCompare(b.id))) {
     const parts: Record<string, number> = {};
     const inherited: string[] = [];
-    let num = 0, den = 0;
+    let num = 0, den = 0, unc = 0;
     for (const { b, key, w } of live) {
       const hit = lookup(model, key, idx, byId);
       if (!hit) continue;
@@ -101,6 +123,7 @@ export function selectModel(category: CategoryId, matrix: Matrix, policy: Policy
       parts[b] = round(v);
       if (hit.inherited) inherited.push(b);
       num += w * v; den += w;
+      unc += w * normalisedCi(bench.get(b), hit.score, tops.get(key)!);
     }
     const coverage = liveWeight > 0 ? den / liveWeight : 0;
     const raw = den > 0 ? num / den : 0;
@@ -113,24 +136,54 @@ export function selectModel(category: CategoryId, matrix: Matrix, policy: Policy
     candidates.push({
       model: model.id, label: model.label, route: route || model.routes[0] || { provider: '-', model: '-' },
       score, coverage: round(coverage), costTier: model.costTier, relativeCost: model.relativeCost,
+      family: model.family, version: model.version, uncertainty: round(den > 0 ? unc / den : 0),
       inherited, parts, ...(excluded ? { excluded } : {}),
     });
   }
 
   candidates.sort((a, b) => b.score - a.score || a.model.localeCompare(b.model));
+
+  // Family supersession: an older version of a family stays a candidate only
+  // if it is SIGNIFICANTLY better than the family's newest routable version
+  // (gap beyond their combined interval, √(u_old² + u_new²), and the margin).
+  // Otherwise a board's noise would keep picking last year's model.
+  const newestOf = new Map<string, Candidate>();
+  for (const c of candidates) {
+    if (c.excluded || !c.family || !c.version?.length) continue;
+    const cur = newestOf.get(c.family);
+    if (!cur || newer(c, cur) < 0) newestOf.set(c.family, c);
+  }
+  for (const c of candidates) {
+    const n = c.family ? newestOf.get(c.family) : undefined;
+    if (c.excluded || !n || n === c || newer(c, n) <= 0) continue;
+    const gap = c.score - n.score;
+    if (gap <= Math.max(policy.margin, Math.sqrt(c.uncertainty ** 2 + n.uncertainty ** 2))) {
+      c.excluded = `superseded by ${n.label} (${gap >= 0 ? '+' : ''}${round(gap)} pts is within noise)`;
+    }
+  }
   const eligible = candidates.filter((c) => !c.excluded);
   if (!eligible.length) return { category, chosen: null, fallbacks: [], candidates, rule: 'no eligible model' };
 
   const top = eligible[0];
+  // Tied with the top = within the policy margin. Board noise is handled by
+  // family supersession above; widening this bar by confidence intervals
+  // would let cheap models with wide intervals win on cost.
+  const bar = policy.margin;
+  const tied = eligible.filter((c) => c.score >= top.score - bar);
+  // Regulated advice (legal / health / bio-medicine) is never cost-optimised.
+  const objective = categoryById(category)?.advisory && policy.advisoryObjective ? policy.advisoryObjective : policy.objective;
   const cheaper = (a: Candidate, b: Candidate) =>
-    TIER_RANK[a.costTier] - TIER_RANK[b.costTier] || a.relativeCost - b.relativeCost || b.score - a.score || a.model.localeCompare(b.model);
+    TIER_RANK[a.costTier] - TIER_RANK[b.costTier] || a.relativeCost - b.relativeCost || newer(a, b) || b.score - a.score || a.model.localeCompare(b.model);
   let chosen = top;
   let rule = `quality: highest score (${top.score})`;
-  if (policy.objective === 'balanced') {
-    const pool = eligible.filter((c) => c.score >= top.score - policy.margin).sort(cheaper);
+  if (objective === 'quality') {
+    chosen = [...tied].sort((a, b) => newer(a, b) || b.score - a.score || a.model.localeCompare(b.model))[0];
+    rule = chosen === top ? `quality: highest score (${top.score})` : `quality: newest of ${tied.length} tied within ${bar} pts of top ${top.score}`;
+  } else if (objective === 'balanced') {
+    const pool = [...tied].sort(cheaper);
     chosen = pool[0];
-    rule = `balanced: cheapest of ${pool.length} within ${policy.margin} pts of top ${top.score}`;
-  } else if (policy.objective === 'cost') {
+    rule = `balanced: cheapest${pool.length > 1 ? ', then newest,' : ''} of ${pool.length} within ${bar} pts of top ${top.score}`;
+  } else if (objective === 'cost') {
     const pool = eligible.filter((c) => c.score >= policy.floor).sort(cheaper);
     if (pool.length) { chosen = pool[0]; rule = `cost: cheapest of ${pool.length} at or above floor ${policy.floor}`; }
     else rule = `cost: nothing clears floor ${policy.floor} → highest score`;

@@ -70,7 +70,11 @@ export const ADAPTERS: Record<string, { bin: string; build(prompt: string, o: Ad
   },
   ollama: {
     bin: 'ollama',
-    build: (prompt, o) => ({ bin: 'ollama', args: ['run', safeModel(o.model) || 'llama3.3'], stdin: prompt }),
+    // ollama has no "default model": the route always names one (from `ollama list`).
+    build: (prompt, o) => {
+      if (!safeModel(o.model)) throw new Error('ollama needs a model (taken from `ollama list` at refresh)');
+      return { bin: 'ollama', args: ['run', o.model!], stdin: prompt };
+    },
   },
 };
 

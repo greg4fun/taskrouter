@@ -15,6 +15,7 @@ decision  7ad129c219781a32  matrix a529910512dffe85
 - **Deterministic.** The same task, matrix snapshot and policy always give the same decision, with the same id. Every number that went into it is in the output.
 - **Multi-CLI.** It drives `claude`, `codex`, `agy` (Gemini / Antigravity), `kimi`, `grok`, `vibe` (Mistral) and `ollama` through a single interface. It only routes to CLIs it finds on your `PATH`.
 - **Splits mixed tasks.** "Research X, then implement Y" becomes a research subtask on the best research model and a coding subtask on the best coding model. The coding subtask depends on the research one.
+- **No hard-coded models.** The catalog is discovered from the leaderboards and from what each installed CLI reports it can run.
 - **Daily data.** The scores come from public leaderboards (LMArena, Scale SEAL, Codesota), refreshed once a day. Your own run outcomes are added as a private benchmark.
 - **Zero runtime dependencies in the core.** The core runs in Node, Deno, Bun, browsers and Cloudflare Workers. Refreshing needs `hyparquet`, an optional dependency, to read LMArena's parquet files.
 
@@ -67,7 +68,20 @@ The tree is data in `src/tree.ts`. Any UI can draw it from `flattenTree()`, and 
 
 The order of the questions is itself policy. Regulated advice is recognised even when the task also mentions code, so it gets the advisory flag. Security is checked before generic coding.
 
-### 3. Picking the model
+### 3. Where the models come from — nothing is hard-coded
+
+No model name or version appears in the code. Each refresh *discovers* the catalog:
+
+| What | From |
+|---|---|
+| which models exist | every name on the leaderboards, normalised (`claude-opus-5.5-max`, `Claude Opus 5.5`, `ForgeCode / Claude Opus 5.5` → one key) |
+| which CLI can run them | the CLIs themselves: `agy models`, `grok models`, `~/.codex/models_cache.json`, `~/.kimi-code/config.toml`, `~/.vibe/config.toml`, `ollama list`; Claude Code has no list command, so a pattern rule routes the two newest versions of each Claude family to `claude --model <id>` |
+| lineage (predecessor) | same family, next-lower parsed version |
+| cost | family tier rules (fable/flagship > opus > pro > sonnet > flash/haiku/mini), never per version |
+
+A model released tomorrow is routable on the next refresh with no code change. `taskrouter refresh` prints what each CLI reported.
+
+### 4. Picking the model
 
 ```
 score     = Σ wᵦ·vᵦ / Σ wᵦ          over the category's benchmarks that have data for this model
@@ -75,20 +89,15 @@ coverage  = (weight with data) / (weight with data for any model)
 adjusted  = score × (0.5 + 0.5·coverage)
 ```
 
-- `vᵦ` is the normalised benchmark value:
-  - Percent scores are used as-is.
-  - Arena ratings become `200 × expected win rate against the board leader`, so the leader scores 100 and a model 31 points behind scores about 91.
-  - Share scores become a fraction of the leader's score.
-- New models reach the CLIs weeks before they reach the leaderboards. When a model has no number on a benchmark, its predecessor's number is used (`inheritsFrom`) and the result is flagged `inherited`.
-- **Policy:**
-  - `quality` takes the highest score.
-  - `balanced` (the default) takes the cheapest model within `margin` points (default 3) of the top: "cheapest that clears the bar".
-  - `cost` takes the cheapest model above `floor`.
-- **Fallbacks:** the first fallback is the best candidate on a different provider, so it survives that provider's outage or quota limit. The rest follow by score.
+- `vᵦ` is the normalised benchmark value: percent as-is; arena ratings as `200 × expected win rate vs the board leader` (leader = 100, −31 points ≈ 91); share scores as a fraction of the leader.
+- **Missing numbers:** a model with no number on a benchmark uses its predecessor's (flagged `inherited`) — new releases reach the CLIs before the boards.
+- **Board noise — family supersession:** an older version of a family is dropped unless it beats the newest routable version by more than their combined confidence interval (`√(u_old² + u_new²)`, from the boards' published bounds). A 16-point Arena gap with ±24 error bars never picks last year's model.
+- **Policy:** `balanced` (default) = cheapest within `margin` (3) points of the top, then newest; `quality` = highest score; `cost` = cheapest above `floor`. Advisory categories (legal, health, bio-medicine) use `advisoryObjective`, default `quality` — regulated advice is never cost-optimised.
+- **Fallbacks:** the best candidate on a *different provider* first, then by score.
 
-Category weights live in `DEFAULT_WEIGHTS` in `src/matrix.ts`. For example, `coding` weighs Arena Agent, SWE-bench Pro, Terminal-Bench 2.0, Arena coding, Arena Software & IT, SWE-bench Verified and the private eval. `legal` weighs Arena's Legal & Government category, Document, Expert and Hard prompts. Override any of them by passing your own matrix.
+Category weights live in `DEFAULT_WEIGHTS` in `src/matrix.ts` (benchmark ids only — no models).
 
-### 4. Splitting
+### 5. Splitting
 
 1. The task is cut into bullet lines, sentences, and clauses ("…, then …", "… and write …").
 2. Each clause is scored on its own.
@@ -104,7 +113,7 @@ Category weights live in `DEFAULT_WEIGHTS` in `src/matrix.ts`. For example, `cod
 | Terminal-Bench 2.0 (median across agents), SWE-bench Verified, GPQA Diamond | [Codesota](https://www.codesota.com) | HTML rows |
 | `private:<category>` | Your own routed runs (`privateScores()`) | (ok+1)/(n+2), at least 3 runs |
 
-Every refresh records, per source, whether it worked, how many rows it read, and which top-of-board names it could not match. Add aliases in `src/models.ts` for any unmatched name you care about. A source that fails keeps yesterday's numbers, because the new scores are merged over the previous snapshot.
+Every refresh records, per source, whether it worked, how many rows it read, and which top-of-board names it could not match. A source that fails keeps yesterday's numbers, because the new scores are merged over the previous snapshot.
 
 **Caveats.**
 - Public boards measure models, not your repos. The private eval is how the router learns what works for you.

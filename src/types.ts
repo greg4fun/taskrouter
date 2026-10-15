@@ -105,10 +105,13 @@ export interface ModelRow {
   label: string;
   vendor: string;
   family: string;
+  /** Parsed version numbers (`claude-opus-5-5` → [5,5]); [] when the name has none. */
+  version?: number[];
   /**
-   * The model this one succeeds. When this model has no score on a benchmark,
-   * the predecessor's score is used and flagged `inherited` — new releases
-   * reach the CLIs weeks before they reach the leaderboards.
+   * The model this one succeeds — COMPUTED by catalog.buildCatalog (same
+   * family, next-lower version), never typed in. When this model has no score
+   * on a benchmark, the predecessor's is used and flagged `inherited`: new
+   * releases reach the CLIs weeks before they reach the leaderboards.
    */
   inheritsFrom?: string;
   /** Names leaderboards use for this model (case-insensitive, punctuation-insensitive). */
@@ -129,6 +132,8 @@ export interface Score {
   /** ISO date the number was published or fetched. */
   asOf: string;
   vendorReported?: boolean;
+  /** Half-width of the source's confidence interval, in the benchmark's raw units (Arena publishes these). */
+  ci?: number;
 }
 
 export interface Matrix {
@@ -155,6 +160,8 @@ export interface Policy {
   objective: 'quality' | 'balanced' | 'cost';
   margin: number;
   floor: number;
+  /** Objective for advisory categories (legal, health, biomed); default 'quality'. */
+  advisoryObjective?: 'quality' | 'balanced' | 'cost';
   /** Providers that can actually run work right now. Empty/undefined = all. */
   available?: string[];
   /** Never pick these models / providers. */
@@ -177,6 +184,10 @@ export interface Candidate {
   coverage: number;
   costTier: CostTier;
   relativeCost: number;
+  family?: string;
+  version?: number[];
+  /** Weighted half-width of the confidence intervals behind `score`, in normalised points. */
+  uncertainty: number;
   /** Benchmark ids whose score was inherited from an older model in the same family. */
   inherited: string[];
   /** benchmark → normalised value used. */

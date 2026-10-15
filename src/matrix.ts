@@ -173,7 +173,8 @@ export function mergeScores(older: readonly Score[], newer: readonly Score[]): S
   for (const s of [...older, ...newer]) {
     const k = `${s.model}|${s.benchmark}`;
     const cur = by.get(k);
-    if (!cur || s.asOf > cur.asOf || (s.asOf === cur.asOf && s.value > cur.value)) by.set(k, s);
+    // Same date: the later list (the fresh pull) wins, so new fields such as `ci` are kept.
+    if (!cur || s.asOf >= cur.asOf) by.set(k, s);
   }
   return [...by.values()].sort((a, b) => (a.model + a.benchmark).localeCompare(b.model + b.benchmark));
 }

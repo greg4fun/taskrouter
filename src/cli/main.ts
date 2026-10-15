@@ -18,6 +18,7 @@ import { fileURLToPath } from 'node:url';
 import { CATEGORY_IDS, flattenTree, isCategoryId, route, selectModel, summarize, TREE } from '../index.ts';
 import type { Decision, Matrix, Policy, TreeNode, Leaf } from '../types.ts';
 import { refresh } from '../refresh/index.ts';
+import { discoverCliModels } from '../refresh/discover.ts';
 import { ADAPTERS, envFor, invocationFor } from './adapters.ts';
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
@@ -60,7 +61,7 @@ function printDecision(d: Decision) {
   console.log(`category  ${d.category}${d.advisory ? '  (advisory — add disclaimer + sources)' : ''}`);
   console.log(`path      ${d.trace.map((t) => `${t.node}:${t.answer}`).join(' → ')} → ${d.leaf}`);
   const c = d.choice.chosen;
-  console.log(`model     ${c ? `${c.label} via ${c.route.provider} (--model ${c.route.model})  score ${c.score}  coverage ${Math.round(c.coverage * 100)}%` : 'none'}`);
+  console.log(`model     ${c ? `${c.label} via ${c.route.provider} (${c.route.model ? `--model ${c.route.model}` : 'CLI default model'})  score ${c.score}  coverage ${Math.round(c.coverage * 100)}%` : 'none'}`);
   console.log(`rule      ${d.choice.rule}`);
   if (d.choice.fallbacks.length) console.log(`fallback  ${d.choice.fallbacks.map((f) => `${f.label} (${f.route.provider}, ${f.score})`).join(' · ')}`);
   for (const s of d.subtasks) {
@@ -143,12 +144,17 @@ async function main() {
   }
   if (cmd === 'refresh') {
     const prev = fs.existsSync(LOCAL) ? JSON.parse(fs.readFileSync(LOCAL, 'utf8')) : fs.existsSync(BUNDLED) ? JSON.parse(fs.readFileSync(BUNDLED, 'utf8')) : null;
-    const { matrix, results } = await refresh({ previous: prev });
+    // What the CLIs on THIS machine can run, from the CLIs themselves; plus
+    // any extra list (--cli-models file.json: [{provider, id}]).
+    const disc = discoverCliModels();
+    const extra = arg('cli-models') ? JSON.parse(fs.readFileSync(arg('cli-models')!, 'utf8')) : [];
+    for (const r of disc.report) console.log(`${r.ok ? '✓' : '·'} cli ${r.provider.padEnd(8)} ${String(r.models).padStart(3)} models${r.note ? `  (${r.note})` : ''}`);
+    const { matrix, results } = await refresh({ previous: prev, cliModels: [...disc.models, ...extra] });
     const out = arg('out') || LOCAL;
     fs.mkdirSync(path.dirname(out), { recursive: true });
     fs.writeFileSync(out, JSON.stringify(matrix, null, 1) + '\n');
-    for (const r of results) console.log(`${r.ok ? '✓' : '✗'} ${r.id.padEnd(9)} ${String(r.scores.length).padStart(4)} scores from ${r.rows} rows${r.error ? `  (${r.error})` : ''}`);
-    console.log(`matrix ${matrix.version} → ${out}`);
+    for (const r of results) console.log(`${r.ok ? '✓' : '✗'} ${r.id.padEnd(9)} ${String(r.raw.length).padStart(5)} rows${r.error ? `  (${r.error})` : ''}`);
+    console.log(`matrix ${matrix.version}: ${matrix.models.length} models (${matrix.models.filter((m) => m.routes.length).length} routable), ${matrix.scores.length} scores → ${out}`);
     if (!results.some((r) => r.ok)) process.exitCode = 1;
     return;
   }
