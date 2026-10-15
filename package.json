@@ -1,0 +1,26 @@
+{
+  "name": "taskrouter",
+  "version": "0.1.0",
+  "description": "Deterministic task router for AI agent CLIs: classify a task with a visible decision tree, pick the best model per category from daily-refreshed public leaderboards plus your own run outcomes, split multi-domain tasks, run them on claude / codex / agy / kimi / grok / vibe.",
+  "license": "MIT",
+  "type": "module",
+  "author": "Greg Stencel",
+  "keywords": ["llm", "router", "model-routing", "agents", "claude-code", "codex", "gemini", "benchmarks", "leaderboard", "multi-agent"],
+  "engines": { "node": ">=23.6" },
+  "bin": { "taskrouter": "bin/taskrouter.js" },
+  "exports": {
+    ".": "./src/index.ts",
+    "./refresh": "./src/refresh/index.ts",
+    "./cli-adapters": "./src/cli/adapters.ts",
+    "./snapshot": "./data/snapshot.json"
+  },
+  "files": ["src", "bin", "data", "README.md", "LICENSE"],
+  "scripts": {
+    "test": "node --test test/*.test.ts",
+    "refresh": "node src/cli/main.ts refresh --out data/snapshot.json",
+    "route": "node src/cli/main.ts route"
+  },
+  "optionalDependencies": {
+    "hyparquet": "1.31.2"
+  }
+}

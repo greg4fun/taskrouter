@@ -1,0 +1,4941 @@
+{
+ "version": "a529910512dffe85",
+ "generatedAt": "2026-10-15T10:57:23.339Z",
+ "benchmarks": [
+  {
+   "id": "arena-webdev",
+   "name": "Arena WebDev",
+   "url": "https://arena.ai/leaderboard/webdev",
+   "measures": "Builds a working web app from a prompt (React/TS/Tailwind), human-voted",
+   "scale": "elo",
+   "harness": "fixed"
+  },
+  {
+   "id": "arena-agent",
+   "name": "Arena Agent",
+   "url": "https://arena.ai/leaderboard/agent",
+   "measures": "Agentic coding sessions with tools, human-judged outcomes (share score)",
+   "scale": "relative",
+   "harness": "fixed"
+  },
+  {
+   "id": "arena-coding",
+   "name": "Arena Text · Coding",
+   "url": "https://arena.ai/leaderboard/text/coding",
+   "measures": "Coding answers in chat, human-voted",
+   "scale": "elo",
+   "harness": "fixed"
+  },
+  {
+   "id": "arena-expert",
+   "name": "Arena Text · Expert",
+   "url": "https://arena.ai/leaderboard/text/expert",
+   "measures": "Expert-level prompts (professional domains), human-voted",
+   "scale": "elo",
+   "harness": "fixed"
+  },
+  {
+   "id": "arena-hard",
+   "name": "Arena Text · Hard prompts",
+   "url": "https://arena.ai/leaderboard/text/hard_prompts",
+   "measures": "Hard, specific, multi-step prompts",
+   "scale": "elo",
+   "harness": "fixed"
+  },
+  {
+   "id": "arena-math",
+   "name": "Arena Text · Math",
+   "url": "https://arena.ai/leaderboard/text/math",
+   "measures": "Math prompts, human-voted",
+   "scale": "elo",
+   "harness": "fixed"
+  },
+  {
+   "id": "arena-creative",
+   "name": "Arena Text · Creative writing",
+   "url": "https://arena.ai/leaderboard/text/creative_writing",
+   "measures": "Creative writing, human-voted",
+   "scale": "elo",
+   "harness": "fixed"
+  },
+  {
+   "id": "arena-legal",
+   "name": "Arena Text · Legal & government",
+   "url": "https://arena.ai/leaderboard/text/industry_legal_and_government",
+   "measures": "Prompts from legal and government work, human-voted",
+   "scale": "elo",
+   "harness": "fixed"
+  },
+  {
+   "id": "arena-medicine",
+   "name": "Arena Text · Medicine & healthcare",
+   "url": "https://arena.ai/leaderboard/text/industry_medicine_and_healthcare",
+   "measures": "Prompts from medicine and healthcare, human-voted",
+   "scale": "elo",
+   "harness": "fixed"
+  },
+  {
+   "id": "arena-science",
+   "name": "Arena Text · Life & physical science",
+   "url": "https://arena.ai/leaderboard/text/industry_life_and_physical_and_social_science",
+   "measures": "Life, physical and social science prompts, human-voted",
+   "scale": "elo",
+   "harness": "fixed"
+  },
+  {
+   "id": "arena-business",
+   "name": "Arena Text · Business & finance",
+   "url": "https://arena.ai/leaderboard/text/industry_business_and_management_and_financial_operations",
+   "measures": "Business, management and finance prompts, human-voted",
+   "scale": "elo",
+   "harness": "fixed"
+  },
+  {
+   "id": "arena-writing",
+   "name": "Arena Text · Writing & language",
+   "url": "https://arena.ai/leaderboard/text/industry_writing_and_literature_and_language",
+   "measures": "Writing, literature and language work, human-voted",
+   "scale": "elo",
+   "harness": "fixed"
+  },
+  {
+   "id": "arena-software",
+   "name": "Arena Text · Software & IT",
+   "url": "https://arena.ai/leaderboard/text/industry_software_and_it_services",
+   "measures": "Software and IT-services prompts, human-voted",
+   "scale": "elo",
+   "harness": "fixed"
+  },
+  {
+   "id": "arena-instruct",
+   "name": "Arena Text · Instruction following",
+   "url": "https://arena.ai/leaderboard/text/instruction_following",
+   "measures": "Following precise instructions",
+   "scale": "elo",
+   "harness": "fixed"
+  },
+  {
+   "id": "arena-text",
+   "name": "Arena Text · Overall",
+   "url": "https://arena.ai/leaderboard/text",
+   "measures": "General chat quality, human-voted",
+   "scale": "elo",
+   "harness": "fixed"
+  },
+  {
+   "id": "arena-search",
+   "name": "Arena Search",
+   "url": "https://arena.ai/leaderboard/search",
+   "measures": "Web-grounded answers with search, human-voted",
+   "scale": "elo",
+   "harness": "fixed"
+  },
+  {
+   "id": "arena-document",
+   "name": "Arena Document",
+   "url": "https://arena.ai/leaderboard/document",
+   "measures": "Answers over long documents / PDFs",
+   "scale": "elo",
+   "harness": "fixed"
+  },
+  {
+   "id": "arena-vision",
+   "name": "Arena Vision",
+   "url": "https://arena.ai/leaderboard/vision",
+   "measures": "Image understanding",
+   "scale": "elo",
+   "harness": "fixed"
+  },
+  {
+   "id": "arena-t2i",
+   "name": "Arena Text-to-Image",
+   "url": "https://arena.ai/leaderboard/text-to-image",
+   "measures": "Image generation aesthetics, human-voted",
+   "scale": "elo",
+   "harness": "fixed"
+  },
+  {
+   "id": "swe-bench-pro",
+   "name": "SWE-bench Pro (SEAL)",
+   "url": "https://scale.com/leaderboard/swe_bench_pro_public",
+   "measures": "Real repo issues, fixed scaffold (250 turns) — isolates the model",
+   "scale": "percent",
+   "harness": "fixed"
+  },
+  {
+   "id": "terminal-bench-2",
+   "name": "Terminal-Bench 2.0",
+   "url": "https://www.codesota.com/browse/agentic/autonomous-coding/terminal-bench-2",
+   "measures": "Terminal tasks: SWE, sysadmin, security, data — agent+model pairs (median taken)",
+   "scale": "percent",
+   "harness": "mixed"
+  },
+  {
+   "id": "swe-bench-verified",
+   "name": "SWE-bench Verified",
+   "url": "https://www.codesota.com/browse/agentic/swe-bench/swe-bench-verified-agentic",
+   "measures": "Python repo issues (saturated; mostly vendor-reported)",
+   "scale": "percent",
+   "harness": "vendor"
+  },
+  {
+   "id": "gpqa",
+   "name": "GPQA Diamond",
+   "url": "https://www.codesota.com/browse/reasoning/multi-step-reasoning/gpqa",
+   "measures": "Graduate-level biology, chemistry, physics questions",
+   "scale": "percent",
+   "harness": "vendor"
+  },
+  {
+   "id": "private",
+   "name": "Private eval (your runs)",
+   "url": "private:",
+   "measures": "Share of routed runs in this category that finished successfully on your fleet",
+   "scale": "percent",
+   "harness": "fixed"
+  }
+ ],
+ "models": [
+  {
+   "id": "claude-fable-5.1",
+   "label": "Claude Fable 5.1",
+   "vendor": "Anthropic",
+   "family": "claude-fable",
+   "inheritsFrom": "claude-fable-5",
+   "aliases": [],
+   "routes": [
+    {
+     "provider": "claude",
+     "model": "fable"
+    }
+   ],
+   "costTier": "subscription",
+   "relativeCost": 8
+  },
+  {
+   "id": "claude-fable-5",
+   "label": "Claude Fable 5",
+   "vendor": "Anthropic",
+   "family": "claude-fable",
+   "inheritsFrom": "claude-opus-5",
+   "aliases": [],
+   "routes": [],
+   "costTier": "subscription",
+   "relativeCost": 8
+  },
+  {
+   "id": "claude-opus-5.5",
+   "label": "Claude Opus 5.5",
+   "vendor": "Anthropic",
+   "family": "claude-opus",
+   "inheritsFrom": "claude-opus-5",
+   "aliases": [
+    "claude-opus-5-5"
+   ],
+   "routes": [
+    {
+     "provider": "claude",
+     "model": "opus5.5"
+    }
+   ],
+   "costTier": "subscription",
+   "relativeCost": 5
+  },
+  {
+   "id": "claude-opus-5",
+   "label": "Claude Opus 5",
+   "vendor": "Anthropic",
+   "family": "claude-opus",
+   "inheritsFrom": "claude-opus-4.8",
+   "aliases": [],
+   "routes": [
+    {
+     "provider": "claude",
+     "model": "opus"
+    }
+   ],
+   "costTier": "subscription",
+   "relativeCost": 5
+  },
+  {
+   "id": "claude-opus-4.8",
+   "label": "Claude Opus 4.8",
+   "vendor": "Anthropic",
+   "family": "claude-opus",
+   "inheritsFrom": "claude-opus-4.7",
+   "aliases": [],
+   "routes": [
+    {
+     "provider": "claude",
+     "model": "opus4.8"
+    }
+   ],
+   "costTier": "subscription",
+   "relativeCost": 5
+  },
+  {
+   "id": "claude-opus-4.7",
+   "label": "Claude Opus 4.7",
+   "vendor": "Anthropic",
+   "family": "claude-opus",
+   "inheritsFrom": "claude-opus-4.6",
+   "aliases": [],
+   "routes": [],
+   "costTier": "subscription",
+   "relativeCost": 5
+  },
+  {
+   "id": "claude-opus-4.6",
+   "label": "Claude Opus 4.6",
+   "vendor": "Anthropic",
+   "family": "claude-opus",
+   "inheritsFrom": "claude-opus-4.5",
+   "aliases": [
+    "claude-4-6-opus"
+   ],
+   "routes": [
+    {
+     "provider": "gemini",
+     "model": "claude-opus-4-6-thinking"
+    }
+   ],
+   "costTier": "subscription",
+   "relativeCost": 5
+  },
+  {
+   "id": "claude-opus-4.5",
+   "label": "Claude Opus 4.5",
+   "vendor": "Anthropic",
+   "family": "claude-opus",
+   "aliases": [
+    "claude-4-5-opus"
+   ],
+   "routes": [],
+   "costTier": "subscription",
+   "relativeCost": 5
+  },
+  {
+   "id": "claude-sonnet-5.5",
+   "label": "Claude Sonnet 5.5",
+   "vendor": "Anthropic",
+   "family": "claude-sonnet",
+   "inheritsFrom": "claude-sonnet-5",
+   "aliases": [],
+   "routes": [
+    {
+     "provider": "claude",
+     "model": "claude-sonnet-5-5"
+    }
+   ],
+   "costTier": "subscription",
+   "relativeCost": 2.5
+  },
+  {
+   "id": "claude-sonnet-5",
+   "label": "Claude Sonnet 5",
+   "vendor": "Anthropic",
+   "family": "claude-sonnet",
+   "inheritsFrom": "claude-sonnet-4.6",
+   "aliases": [],
+   "routes": [
+    {
+     "provider": "claude",
+     "model": "sonnet"
+    }
+   ],
+   "costTier": "subscription",
+   "relativeCost": 2
+  },
+  {
+   "id": "claude-sonnet-4.6",
+   "label": "Claude Sonnet 4.6",
+   "vendor": "Anthropic",
+   "family": "claude-sonnet",
+   "inheritsFrom": "claude-sonnet-4.5",
+   "aliases": [],
+   "routes": [
+    {
+     "provider": "gemini",
+     "model": "claude-sonnet-4-6"
+    }
+   ],
+   "costTier": "subscription",
+   "relativeCost": 2
+  },
+  {
+   "id": "claude-sonnet-4.5",
+   "label": "Claude Sonnet 4.5",
+   "vendor": "Anthropic",
+   "family": "claude-sonnet",
+   "aliases": [
+    "claude-4-5-sonnet"
+   ],
+   "routes": [],
+   "costTier": "subscription",
+   "relativeCost": 2
+  },
+  {
+   "id": "claude-haiku-5.5",
+   "label": "Claude Haiku 5.5",
+   "vendor": "Anthropic",
+   "family": "claude-haiku",
+   "inheritsFrom": "claude-haiku-4.5",
+   "aliases": [],
+   "routes": [
+    {
+     "provider": "claude",
+     "model": "claude-haiku-5-5"
+    }
+   ],
+   "costTier": "subscription",
+   "relativeCost": 1
+  },
+  {
+   "id": "claude-haiku-4.5",
+   "label": "Claude Haiku 4.5",
+   "vendor": "Anthropic",
+   "family": "claude-haiku",
+   "aliases": [
+    "claude-4-5-haiku"
+   ],
+   "routes": [
+    {
+     "provider": "claude",
+     "model": "haiku"
+    }
+   ],
+   "costTier": "subscription",
+   "relativeCost": 1
+  },
+  {
+   "id": "gpt-5.6-sol",
+   "label": "GPT-5.6 Sol",
+   "vendor": "OpenAI",
+   "family": "gpt",
+   "inheritsFrom": "gpt-5.5",
+   "aliases": [],
+   "routes": [
+    {
+     "provider": "codex",
+     "model": "gpt-5.6-sol"
+    }
+   ],
+   "costTier": "subscription",
+   "relativeCost": 4
+  },
+  {
+   "id": "gpt-5.5",
+   "label": "GPT-5.5",
+   "vendor": "OpenAI",
+   "family": "gpt",
+   "inheritsFrom": "gpt-5.4",
+   "aliases": [],
+   "routes": [
+    {
+     "provider": "codex",
+     "model": "gpt-5.5"
+    }
+   ],
+   "costTier": "subscription",
+   "relativeCost": 4
+  },
+  {
+   "id": "gpt-5.4",
+   "label": "GPT-5.4",
+   "vendor": "OpenAI",
+   "family": "gpt",
+   "inheritsFrom": "gpt-5.3-codex",
+   "aliases": [],
+   "routes": [],
+   "costTier": "subscription",
+   "relativeCost": 4
+  },
+  {
+   "id": "gpt-5.3-codex",
+   "label": "GPT-5.3 Codex",
+   "vendor": "OpenAI",
+   "family": "gpt",
+   "aliases": [],
+   "routes": [],
+   "costTier": "subscription",
+   "relativeCost": 4
+  },
+  {
+   "id": "gpt-6.1-sol",
+   "label": "GPT-6.1 Sol",
+   "vendor": "OpenAI",
+   "family": "gpt",
+   "aliases": [],
+   "routes": [],
+   "costTier": "metered",
+   "relativeCost": 6
+  },
+  {
+   "id": "gpt-6-astra",
+   "label": "GPT-6 Astra",
+   "vendor": "OpenAI",
+   "family": "gpt",
+   "aliases": [],
+   "routes": [],
+   "costTier": "metered",
+   "relativeCost": 8
+  },
+  {
+   "id": "gpt-oss-120b",
+   "label": "GPT-OSS 120B",
+   "vendor": "OpenAI",
+   "family": "gpt-oss",
+   "aliases": [],
+   "routes": [
+    {
+     "provider": "gemini",
+     "model": "gpt-oss-120b-medium"
+    }
+   ],
+   "costTier": "subscription",
+   "relativeCost": 0.5
+  },
+  {
+   "id": "gpt-6-sol",
+   "label": "GPT-6 Sol",
+   "vendor": "OpenAI",
+   "family": "gpt",
+   "aliases": [],
+   "routes": [],
+   "costTier": "metered",
+   "relativeCost": 6
+  },
+  {
+   "id": "gpt-image-2.5",
+   "label": "GPT Image 2.5",
+   "vendor": "OpenAI",
+   "family": "gpt-image",
+   "inheritsFrom": "gpt-image-2",
+   "aliases": [
+    "gpt-image-2.5-sunburst",
+    "gpt-image-2.5-flare"
+   ],
+   "routes": [
+    {
+     "provider": "codex",
+     "model": "gpt-5.6-sol",
+     "modalities": [
+      "image"
+     ]
+    }
+   ],
+   "costTier": "subscription",
+   "relativeCost": 4
+  },
+  {
+   "id": "gpt-image-2",
+   "label": "GPT Image 2",
+   "vendor": "OpenAI",
+   "family": "gpt-image",
+   "aliases": [],
+   "routes": [],
+   "costTier": "metered",
+   "relativeCost": 3
+  },
+  {
+   "id": "gemini-3.8-flash",
+   "label": "Gemini 3.8 Flash",
+   "vendor": "Google",
+   "family": "gemini-flash",
+   "inheritsFrom": "gemini-3.7-flash",
+   "aliases": [],
+   "routes": [
+    {
+     "provider": "gemini",
+     "model": "gemini-3.8-flash-high"
+    }
+   ],
+   "costTier": "subscription",
+   "relativeCost": 1
+  },
+  {
+   "id": "gemini-3.7-flash",
+   "label": "Gemini 3.7 Flash",
+   "vendor": "Google",
+   "family": "gemini-flash",
+   "inheritsFrom": "gemini-3-flash",
+   "aliases": [],
+   "routes": [],
+   "costTier": "subscription",
+   "relativeCost": 1
+  },
+  {
+   "id": "gemini-3-flash",
+   "label": "Gemini 3 Flash",
+   "vendor": "Google",
+   "family": "gemini-flash",
+   "aliases": [],
+   "routes": [],
+   "costTier": "subscription",
+   "relativeCost": 1
+  },
+  {
+   "id": "gemini-3.1-pro",
+   "label": "Gemini 3.1 Pro",
+   "vendor": "Google",
+   "family": "gemini-pro",
+   "inheritsFrom": "gemini-3-pro",
+   "aliases": [],
+   "routes": [
+    {
+     "provider": "gemini",
+     "model": "gemini-3.1-pro-high"
+    }
+   ],
+   "costTier": "subscription",
+   "relativeCost": 3
+  },
+  {
+   "id": "gemini-3-pro",
+   "label": "Gemini 3 Pro",
+   "vendor": "Google",
+   "family": "gemini-pro",
+   "aliases": [],
+   "routes": [],
+   "costTier": "subscription",
+   "relativeCost": 3
+  },
+  {
+   "id": "gemini-4-argon",
+   "label": "Gemini 4 Argon",
+   "vendor": "Google",
+   "family": "gemini",
+   "aliases": [],
+   "routes": [],
+   "costTier": "metered",
+   "relativeCost": 5
+  },
+  {
+   "id": "nano-banana-2.1",
+   "label": "Nano Banana 2.1",
+   "vendor": "Google",
+   "family": "gemini-image",
+   "inheritsFrom": "nano-banana-2",
+   "aliases": [
+    "gemini-nano-banana-2.1"
+   ],
+   "routes": [
+    {
+     "provider": "gemini",
+     "model": "gemini-3.8-flash-high",
+     "modalities": [
+      "image"
+     ]
+    }
+   ],
+   "costTier": "subscription",
+   "relativeCost": 1.5
+  },
+  {
+   "id": "nano-banana-2",
+   "label": "Nano Banana 2",
+   "vendor": "Google",
+   "family": "gemini-image",
+   "aliases": [
+    "gemini-nano-banana-2",
+    "gemini-3.1-flash-image"
+   ],
+   "routes": [],
+   "costTier": "metered",
+   "relativeCost": 2
+  },
+  {
+   "id": "kimi-k3",
+   "label": "Kimi K3",
+   "vendor": "Moonshot",
+   "family": "kimi",
+   "inheritsFrom": "kimi-k2.6",
+   "aliases": [],
+   "routes": [
+    {
+     "provider": "kimi",
+     "model": "kimi-code/k3"
+    }
+   ],
+   "costTier": "subscription",
+   "relativeCost": 1.5
+  },
+  {
+   "id": "kimi-k2.6",
+   "label": "Kimi K2.6",
+   "vendor": "Moonshot",
+   "family": "kimi",
+   "inheritsFrom": "kimi-k2.5",
+   "aliases": [],
+   "routes": [],
+   "costTier": "subscription",
+   "relativeCost": 1.5
+  },
+  {
+   "id": "kimi-k2.5",
+   "label": "Kimi K2.5",
+   "vendor": "Moonshot",
+   "family": "kimi",
+   "aliases": [],
+   "routes": [],
+   "costTier": "subscription",
+   "relativeCost": 1.5
+  },
+  {
+   "id": "grok-4.6",
+   "label": "Grok 4.6",
+   "vendor": "xAI",
+   "family": "grok",
+   "inheritsFrom": "grok-4.5",
+   "aliases": [],
+   "routes": [
+    {
+     "provider": "grok",
+     "model": "grok-4.6"
+    }
+   ],
+   "costTier": "subscription",
+   "relativeCost": 3
+  },
+  {
+   "id": "grok-4.5",
+   "label": "Grok 4.5",
+   "vendor": "xAI",
+   "family": "grok",
+   "aliases": [],
+   "routes": [
+    {
+     "provider": "grok",
+     "model": "grok-4.5"
+    }
+   ],
+   "costTier": "subscription",
+   "relativeCost": 3
+  },
+  {
+   "id": "mistral-medium-3.5",
+   "label": "Mistral Medium 3.5",
+   "vendor": "Mistral",
+   "family": "mistral",
+   "aliases": [],
+   "routes": [
+    {
+     "provider": "mistral",
+     "model": "mistral-medium-3.5"
+    }
+   ],
+   "costTier": "metered",
+   "relativeCost": 1.5
+  }
+ ],
+ "scores": [
+  {
+   "model": "claude-fable-5.1",
+   "benchmark": "arena-agent",
+   "value": 0.14,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (agent/overall)",
+   "asOf": "2026-10-14"
+  },
+  {
+   "model": "claude-fable-5.1",
+   "benchmark": "arena-business",
+   "value": 1485.23,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_business_and_management_and_financial_operations)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-fable-5.1",
+   "benchmark": "arena-coding",
+   "value": 1535.26,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/coding)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-fable-5.1",
+   "benchmark": "arena-creative",
+   "value": 1483.9,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/creative_writing)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-fable-5.1",
+   "benchmark": "arena-document",
+   "value": 1492.83,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (document_style_control/overall)",
+   "asOf": "2026-09-13"
+  },
+  {
+   "model": "claude-fable-5.1",
+   "benchmark": "arena-expert",
+   "value": 1523.7,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/expert)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-fable-5.1",
+   "benchmark": "arena-hard",
+   "value": 1520.2,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/hard_prompts)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-fable-5.1",
+   "benchmark": "arena-instruct",
+   "value": 1496.71,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/instruction_following)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-fable-5.1",
+   "benchmark": "arena-legal",
+   "value": 1491.95,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_legal_and_government)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-fable-5.1",
+   "benchmark": "arena-math",
+   "value": 1524.35,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/math)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-fable-5.1",
+   "benchmark": "arena-medicine",
+   "value": 1524.47,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_medicine_and_healthcare)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-fable-5.1",
+   "benchmark": "arena-science",
+   "value": 1519.49,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_life_and_physical_and_social_science)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-fable-5.1",
+   "benchmark": "arena-search",
+   "value": 1233.37,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (search_style_control/overall)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-fable-5.1",
+   "benchmark": "arena-software",
+   "value": 1527.49,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_software_and_it_services)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-fable-5.1",
+   "benchmark": "arena-text",
+   "value": 1500.57,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/overall)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-fable-5.1",
+   "benchmark": "arena-vision",
+   "value": 1286.41,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (vision_style_control/overall)",
+   "asOf": "2026-10-09"
+  },
+  {
+   "model": "claude-fable-5.1",
+   "benchmark": "arena-webdev",
+   "value": 1742.65,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (webdev/overall)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-fable-5.1",
+   "benchmark": "arena-writing",
+   "value": 1491.64,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_writing_and_literature_and_language)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-fable-5",
+   "benchmark": "arena-agent",
+   "value": 0.08,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (agent/overall)",
+   "asOf": "2026-10-14"
+  },
+  {
+   "model": "claude-fable-5",
+   "benchmark": "arena-business",
+   "value": 1501.24,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_business_and_management_and_financial_operations)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-fable-5",
+   "benchmark": "arena-coding",
+   "value": 1550.53,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/coding)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-fable-5",
+   "benchmark": "arena-creative",
+   "value": 1501.12,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/creative_writing)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-fable-5",
+   "benchmark": "arena-document",
+   "value": 1498.88,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (document_style_control/overall)",
+   "asOf": "2026-09-13"
+  },
+  {
+   "model": "claude-fable-5",
+   "benchmark": "arena-expert",
+   "value": 1550.88,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/expert)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-fable-5",
+   "benchmark": "arena-hard",
+   "value": 1528.86,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/hard_prompts)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-fable-5",
+   "benchmark": "arena-instruct",
+   "value": 1508.24,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/instruction_following)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-fable-5",
+   "benchmark": "arena-legal",
+   "value": 1511.87,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_legal_and_government)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-fable-5",
+   "benchmark": "arena-math",
+   "value": 1523.69,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/math)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-fable-5",
+   "benchmark": "arena-medicine",
+   "value": 1506.73,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_medicine_and_healthcare)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-fable-5",
+   "benchmark": "arena-science",
+   "value": 1525.33,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_life_and_physical_and_social_science)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-fable-5",
+   "benchmark": "arena-search",
+   "value": 1229.02,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (search_style_control/overall)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-fable-5",
+   "benchmark": "arena-software",
+   "value": 1537.96,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_software_and_it_services)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-fable-5",
+   "benchmark": "arena-text",
+   "value": 1503.38,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/overall)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-fable-5",
+   "benchmark": "arena-vision",
+   "value": 1307.97,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (vision_style_control/overall)",
+   "asOf": "2026-10-09"
+  },
+  {
+   "model": "claude-fable-5",
+   "benchmark": "arena-webdev",
+   "value": 1623.83,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (webdev/overall)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-fable-5",
+   "benchmark": "arena-writing",
+   "value": 1507.87,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_writing_and_literature_and_language)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-haiku-4.5",
+   "benchmark": "arena-business",
+   "value": 1419.51,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_business_and_management_and_financial_operations)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-haiku-4.5",
+   "benchmark": "arena-coding",
+   "value": 1481.21,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/coding)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-haiku-4.5",
+   "benchmark": "arena-creative",
+   "value": 1387.31,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/creative_writing)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-haiku-4.5",
+   "benchmark": "arena-document",
+   "value": 1418.73,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (document_style_control/overall)",
+   "asOf": "2026-09-13"
+  },
+  {
+   "model": "claude-haiku-4.5",
+   "benchmark": "arena-expert",
+   "value": 1451.54,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/expert)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-haiku-4.5",
+   "benchmark": "arena-hard",
+   "value": 1441.08,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/hard_prompts)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-haiku-4.5",
+   "benchmark": "arena-instruct",
+   "value": 1414.99,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/instruction_following)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-haiku-4.5",
+   "benchmark": "arena-legal",
+   "value": 1415.87,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_legal_and_government)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-haiku-4.5",
+   "benchmark": "arena-math",
+   "value": 1400.9,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/math)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-haiku-4.5",
+   "benchmark": "arena-medicine",
+   "value": 1424.72,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_medicine_and_healthcare)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-haiku-4.5",
+   "benchmark": "arena-science",
+   "value": 1431.01,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_life_and_physical_and_social_science)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-haiku-4.5",
+   "benchmark": "arena-software",
+   "value": 1464.27,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_software_and_it_services)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-haiku-4.5",
+   "benchmark": "arena-text",
+   "value": 1414.08,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/overall)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-haiku-4.5",
+   "benchmark": "arena-webdev",
+   "value": 1329.87,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (webdev/overall)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-haiku-4.5",
+   "benchmark": "arena-writing",
+   "value": 1399.61,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_writing_and_literature_and_language)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-haiku-4.5",
+   "benchmark": "swe-bench-pro",
+   "value": 39.45,
+   "source": "https://scale.com/leaderboard/swe_bench_pro_public",
+   "asOf": "2026-10-15"
+  },
+  {
+   "model": "claude-haiku-4.5",
+   "benchmark": "swe-bench-verified",
+   "value": 73.3,
+   "source": "https://www.codesota.com/browse/agentic/swe-bench/swe-bench-verified-agentic",
+   "asOf": "2026-04-01",
+   "vendorReported": true
+  },
+  {
+   "model": "claude-haiku-5.5",
+   "benchmark": "arena-agent",
+   "value": 0.02,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (agent/overall)",
+   "asOf": "2026-10-14"
+  },
+  {
+   "model": "claude-haiku-5.5",
+   "benchmark": "arena-webdev",
+   "value": 1585.03,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (webdev/overall)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-opus-4.5",
+   "benchmark": "arena-business",
+   "value": 1472.13,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_business_and_management_and_financial_operations)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-opus-4.5",
+   "benchmark": "arena-coding",
+   "value": 1530.56,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/coding)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-opus-4.5",
+   "benchmark": "arena-creative",
+   "value": 1469.43,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/creative_writing)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-opus-4.5",
+   "benchmark": "arena-document",
+   "value": 1464.61,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (document_style_control/overall)",
+   "asOf": "2026-09-13"
+  },
+  {
+   "model": "claude-opus-4.5",
+   "benchmark": "arena-expert",
+   "value": 1503.36,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/expert)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-opus-4.5",
+   "benchmark": "arena-hard",
+   "value": 1500.76,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/hard_prompts)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-opus-4.5",
+   "benchmark": "arena-instruct",
+   "value": 1483.5,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/instruction_following)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-opus-4.5",
+   "benchmark": "arena-legal",
+   "value": 1487.18,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_legal_and_government)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-opus-4.5",
+   "benchmark": "arena-math",
+   "value": 1472.16,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/math)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-opus-4.5",
+   "benchmark": "arena-medicine",
+   "value": 1487.78,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_medicine_and_healthcare)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-opus-4.5",
+   "benchmark": "arena-science",
+   "value": 1491.79,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_life_and_physical_and_social_science)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-opus-4.5",
+   "benchmark": "arena-search",
+   "value": 1186.69,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (search_style_control/overall)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-opus-4.5",
+   "benchmark": "arena-software",
+   "value": 1512.08,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_software_and_it_services)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-opus-4.5",
+   "benchmark": "arena-text",
+   "value": 1473.67,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/overall)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-opus-4.5",
+   "benchmark": "arena-webdev",
+   "value": 1493.44,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (webdev/overall)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-opus-4.5",
+   "benchmark": "arena-writing",
+   "value": 1466.66,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_writing_and_literature_and_language)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-opus-4.5",
+   "benchmark": "gpqa",
+   "value": 74.9,
+   "source": "https://www.codesota.com/browse/reasoning/multi-step-reasoning/gpqa",
+   "asOf": "2026-03-01",
+   "vendorReported": true
+  },
+  {
+   "model": "claude-opus-4.5",
+   "benchmark": "swe-bench-pro",
+   "value": 45.89,
+   "source": "https://scale.com/leaderboard/swe_bench_pro_public",
+   "asOf": "2026-10-15"
+  },
+  {
+   "model": "claude-opus-4.5",
+   "benchmark": "swe-bench-verified",
+   "value": 80.9,
+   "source": "https://www.codesota.com/browse/agentic/swe-bench/swe-bench-verified-agentic",
+   "asOf": "2026-04-01",
+   "vendorReported": true
+  },
+  {
+   "model": "claude-opus-4.6",
+   "benchmark": "arena-business",
+   "value": 1500.43,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_business_and_management_and_financial_operations)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-opus-4.6",
+   "benchmark": "arena-coding",
+   "value": 1548.4,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/coding)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-opus-4.6",
+   "benchmark": "arena-creative",
+   "value": 1499.77,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/creative_writing)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-opus-4.6",
+   "benchmark": "arena-document",
+   "value": 1495.26,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (document_style_control/overall)",
+   "asOf": "2026-09-13"
+  },
+  {
+   "model": "claude-opus-4.6",
+   "benchmark": "arena-expert",
+   "value": 1545.81,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/expert)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-opus-4.6",
+   "benchmark": "arena-hard",
+   "value": 1531.57,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/hard_prompts)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-opus-4.6",
+   "benchmark": "arena-instruct",
+   "value": 1512.25,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/instruction_following)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-opus-4.6",
+   "benchmark": "arena-legal",
+   "value": 1510.82,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_legal_and_government)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-opus-4.6",
+   "benchmark": "arena-math",
+   "value": 1517.43,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/math)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-opus-4.6",
+   "benchmark": "arena-medicine",
+   "value": 1518.12,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_medicine_and_healthcare)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-opus-4.6",
+   "benchmark": "arena-science",
+   "value": 1528.54,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_life_and_physical_and_social_science)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-opus-4.6",
+   "benchmark": "arena-search",
+   "value": 1222.05,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (search_style_control/overall)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-opus-4.6",
+   "benchmark": "arena-software",
+   "value": 1538.11,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_software_and_it_services)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-opus-4.6",
+   "benchmark": "arena-text",
+   "value": 1503.11,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/overall)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-opus-4.6",
+   "benchmark": "arena-vision",
+   "value": 1299.23,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (vision_style_control/overall)",
+   "asOf": "2026-10-09"
+  },
+  {
+   "model": "claude-opus-4.6",
+   "benchmark": "arena-webdev",
+   "value": 1546.36,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (webdev/overall)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-opus-4.6",
+   "benchmark": "arena-writing",
+   "value": 1500.44,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_writing_and_literature_and_language)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-opus-4.6",
+   "benchmark": "gpqa",
+   "value": 91.3,
+   "source": "https://www.codesota.com/browse/reasoning/multi-step-reasoning/gpqa",
+   "asOf": "2026-04-01",
+   "vendorReported": true
+  },
+  {
+   "model": "claude-opus-4.6",
+   "benchmark": "swe-bench-pro",
+   "value": 51.9,
+   "source": "https://scale.com/leaderboard/swe_bench_pro_public",
+   "asOf": "2026-10-15"
+  },
+  {
+   "model": "claude-opus-4.6",
+   "benchmark": "swe-bench-verified",
+   "value": 80.8,
+   "source": "https://www.codesota.com/browse/agentic/swe-bench/swe-bench-verified-agentic",
+   "asOf": "2026-04-01",
+   "vendorReported": true
+  },
+  {
+   "model": "claude-opus-4.6",
+   "benchmark": "terminal-bench-2",
+   "value": 72.1,
+   "source": "https://www.codesota.com/browse/agentic/autonomous-coding/terminal-bench-2",
+   "asOf": "2026-04-01"
+  },
+  {
+   "model": "claude-opus-4.7",
+   "benchmark": "arena-business",
+   "value": 1508.07,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_business_and_management_and_financial_operations)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-opus-4.7",
+   "benchmark": "arena-coding",
+   "value": 1550.49,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/coding)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-opus-4.7",
+   "benchmark": "arena-creative",
+   "value": 1488.87,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/creative_writing)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-opus-4.7",
+   "benchmark": "arena-document",
+   "value": 1494.19,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (document_style_control/overall)",
+   "asOf": "2026-09-13"
+  },
+  {
+   "model": "claude-opus-4.7",
+   "benchmark": "arena-expert",
+   "value": 1534.17,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/expert)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-opus-4.7",
+   "benchmark": "arena-hard",
+   "value": 1525.37,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/hard_prompts)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-opus-4.7",
+   "benchmark": "arena-instruct",
+   "value": 1502.2,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/instruction_following)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-opus-4.7",
+   "benchmark": "arena-legal",
+   "value": 1511.33,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_legal_and_government)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-opus-4.7",
+   "benchmark": "arena-math",
+   "value": 1503.92,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/math)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-opus-4.7",
+   "benchmark": "arena-medicine",
+   "value": 1517.04,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_medicine_and_healthcare)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-opus-4.7",
+   "benchmark": "arena-science",
+   "value": 1525.34,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_life_and_physical_and_social_science)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-opus-4.7",
+   "benchmark": "arena-search",
+   "value": 1209.71,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (search_style_control/overall)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-opus-4.7",
+   "benchmark": "arena-software",
+   "value": 1540.5,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_software_and_it_services)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-opus-4.7",
+   "benchmark": "arena-text",
+   "value": 1501.03,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/overall)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-opus-4.7",
+   "benchmark": "arena-vision",
+   "value": 1298.22,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (vision_style_control/overall)",
+   "asOf": "2026-10-09"
+  },
+  {
+   "model": "claude-opus-4.7",
+   "benchmark": "arena-webdev",
+   "value": 1557.65,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (webdev/overall)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-opus-4.7",
+   "benchmark": "arena-writing",
+   "value": 1496.7,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_writing_and_literature_and_language)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-opus-4.8",
+   "benchmark": "arena-agent",
+   "value": 0.07,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (agent/overall)",
+   "asOf": "2026-10-14"
+  },
+  {
+   "model": "claude-opus-4.8",
+   "benchmark": "arena-business",
+   "value": 1488.78,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_business_and_management_and_financial_operations)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-opus-4.8",
+   "benchmark": "arena-coding",
+   "value": 1533.37,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/coding)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-opus-4.8",
+   "benchmark": "arena-creative",
+   "value": 1469.39,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/creative_writing)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-opus-4.8",
+   "benchmark": "arena-document",
+   "value": 1485.93,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (document_style_control/overall)",
+   "asOf": "2026-09-13"
+  },
+  {
+   "model": "claude-opus-4.8",
+   "benchmark": "arena-expert",
+   "value": 1526.19,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/expert)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-opus-4.8",
+   "benchmark": "arena-hard",
+   "value": 1513.05,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/hard_prompts)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-opus-4.8",
+   "benchmark": "arena-instruct",
+   "value": 1490.94,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/instruction_following)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-opus-4.8",
+   "benchmark": "arena-legal",
+   "value": 1497.35,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_legal_and_government)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-opus-4.8",
+   "benchmark": "arena-math",
+   "value": 1494.21,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/math)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-opus-4.8",
+   "benchmark": "arena-medicine",
+   "value": 1499.73,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_medicine_and_healthcare)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-opus-4.8",
+   "benchmark": "arena-science",
+   "value": 1503.78,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_life_and_physical_and_social_science)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-opus-4.8",
+   "benchmark": "arena-search",
+   "value": 1195.25,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (search_style_control/overall)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-opus-4.8",
+   "benchmark": "arena-software",
+   "value": 1523.34,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_software_and_it_services)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-opus-4.8",
+   "benchmark": "arena-text",
+   "value": 1481.51,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/overall)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-opus-4.8",
+   "benchmark": "arena-vision",
+   "value": 1285.63,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (vision_style_control/overall)",
+   "asOf": "2026-10-09"
+  },
+  {
+   "model": "claude-opus-4.8",
+   "benchmark": "arena-webdev",
+   "value": 1555.99,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (webdev/overall)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-opus-4.8",
+   "benchmark": "arena-writing",
+   "value": 1475.22,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_writing_and_literature_and_language)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-opus-5.5",
+   "benchmark": "arena-agent",
+   "value": 0.17,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (agent/overall)",
+   "asOf": "2026-10-14"
+  },
+  {
+   "model": "claude-opus-5.5",
+   "benchmark": "arena-business",
+   "value": 1492.05,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_business_and_management_and_financial_operations)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-opus-5.5",
+   "benchmark": "arena-coding",
+   "value": 1545.15,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/coding)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-opus-5.5",
+   "benchmark": "arena-creative",
+   "value": 1517.11,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/creative_writing)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-opus-5.5",
+   "benchmark": "arena-expert",
+   "value": 1539.07,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/expert)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-opus-5.5",
+   "benchmark": "arena-hard",
+   "value": 1531.78,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/hard_prompts)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-opus-5.5",
+   "benchmark": "arena-instruct",
+   "value": 1517.48,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/instruction_following)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-opus-5.5",
+   "benchmark": "arena-legal",
+   "value": 1495.06,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_legal_and_government)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-opus-5.5",
+   "benchmark": "arena-math",
+   "value": 1503.26,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/math)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-opus-5.5",
+   "benchmark": "arena-medicine",
+   "value": 1515.61,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_medicine_and_healthcare)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-opus-5.5",
+   "benchmark": "arena-science",
+   "value": 1518.02,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_life_and_physical_and_social_science)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-opus-5.5",
+   "benchmark": "arena-search",
+   "value": 1211.23,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (search_style_control/overall)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-opus-5.5",
+   "benchmark": "arena-software",
+   "value": 1536.85,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_software_and_it_services)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-opus-5.5",
+   "benchmark": "arena-text",
+   "value": 1508.08,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/overall)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-opus-5.5",
+   "benchmark": "arena-vision",
+   "value": 1292.69,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (vision_style_control/overall)",
+   "asOf": "2026-10-09"
+  },
+  {
+   "model": "claude-opus-5.5",
+   "benchmark": "arena-webdev",
+   "value": 1811.15,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (webdev/overall)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-opus-5.5",
+   "benchmark": "arena-writing",
+   "value": 1519.41,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_writing_and_literature_and_language)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-opus-5",
+   "benchmark": "arena-agent",
+   "value": 0.09,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (agent/overall)",
+   "asOf": "2026-10-14"
+  },
+  {
+   "model": "claude-opus-5",
+   "benchmark": "arena-business",
+   "value": 1485.35,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_business_and_management_and_financial_operations)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-opus-5",
+   "benchmark": "arena-coding",
+   "value": 1532.75,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/coding)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-opus-5",
+   "benchmark": "arena-creative",
+   "value": 1470.68,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/creative_writing)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-opus-5",
+   "benchmark": "arena-document",
+   "value": 1489.75,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (document_style_control/overall)",
+   "asOf": "2026-09-13"
+  },
+  {
+   "model": "claude-opus-5",
+   "benchmark": "arena-expert",
+   "value": 1539.23,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/expert)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-opus-5",
+   "benchmark": "arena-hard",
+   "value": 1514.36,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/hard_prompts)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-opus-5",
+   "benchmark": "arena-instruct",
+   "value": 1495.76,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/instruction_following)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-opus-5",
+   "benchmark": "arena-legal",
+   "value": 1503.3,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_legal_and_government)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-opus-5",
+   "benchmark": "arena-math",
+   "value": 1522.12,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/math)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-opus-5",
+   "benchmark": "arena-medicine",
+   "value": 1511.68,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_medicine_and_healthcare)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-opus-5",
+   "benchmark": "arena-science",
+   "value": 1512.18,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_life_and_physical_and_social_science)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-opus-5",
+   "benchmark": "arena-search",
+   "value": 1214.35,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (search_style_control/overall)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-opus-5",
+   "benchmark": "arena-software",
+   "value": 1522.87,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_software_and_it_services)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-opus-5",
+   "benchmark": "arena-text",
+   "value": 1489.85,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/overall)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-opus-5",
+   "benchmark": "arena-vision",
+   "value": 1287.42,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (vision_style_control/overall)",
+   "asOf": "2026-10-09"
+  },
+  {
+   "model": "claude-opus-5",
+   "benchmark": "arena-webdev",
+   "value": 1689.97,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (webdev/overall)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-opus-5",
+   "benchmark": "arena-writing",
+   "value": 1480.2,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_writing_and_literature_and_language)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-sonnet-4.5",
+   "benchmark": "arena-business",
+   "value": 1460.66,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_business_and_management_and_financial_operations)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-sonnet-4.5",
+   "benchmark": "arena-coding",
+   "value": 1519.03,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/coding)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-sonnet-4.5",
+   "benchmark": "arena-creative",
+   "value": 1453.85,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/creative_writing)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-sonnet-4.5",
+   "benchmark": "arena-document",
+   "value": 1449.08,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (document_style_control/overall)",
+   "asOf": "2026-09-13"
+  },
+  {
+   "model": "claude-sonnet-4.5",
+   "benchmark": "arena-expert",
+   "value": 1497.8,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/expert)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-sonnet-4.5",
+   "benchmark": "arena-hard",
+   "value": 1487.07,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/hard_prompts)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-sonnet-4.5",
+   "benchmark": "arena-instruct",
+   "value": 1463.89,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/instruction_following)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-sonnet-4.5",
+   "benchmark": "arena-legal",
+   "value": 1464.57,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_legal_and_government)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-sonnet-4.5",
+   "benchmark": "arena-math",
+   "value": 1455,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/math)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-sonnet-4.5",
+   "benchmark": "arena-medicine",
+   "value": 1474.15,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_medicine_and_healthcare)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-sonnet-4.5",
+   "benchmark": "arena-science",
+   "value": 1471.74,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_life_and_physical_and_social_science)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-sonnet-4.5",
+   "benchmark": "arena-search",
+   "value": 1175.98,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (search_style_control/overall)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-sonnet-4.5",
+   "benchmark": "arena-software",
+   "value": 1500.11,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_software_and_it_services)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-sonnet-4.5",
+   "benchmark": "arena-text",
+   "value": 1456.4,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/overall)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-sonnet-4.5",
+   "benchmark": "arena-webdev",
+   "value": 1393.31,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (webdev/overall)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-sonnet-4.5",
+   "benchmark": "arena-writing",
+   "value": 1453.76,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_writing_and_literature_and_language)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-sonnet-4.5",
+   "benchmark": "swe-bench-pro",
+   "value": 43.6,
+   "source": "https://scale.com/leaderboard/swe_bench_pro_public",
+   "asOf": "2026-10-15"
+  },
+  {
+   "model": "claude-sonnet-4.6",
+   "benchmark": "arena-business",
+   "value": 1482.01,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_business_and_management_and_financial_operations)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-sonnet-4.6",
+   "benchmark": "arena-coding",
+   "value": 1528.43,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/coding)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-sonnet-4.6",
+   "benchmark": "arena-creative",
+   "value": 1449.2,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/creative_writing)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-sonnet-4.6",
+   "benchmark": "arena-document",
+   "value": 1477.73,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (document_style_control/overall)",
+   "asOf": "2026-09-13"
+  },
+  {
+   "model": "claude-sonnet-4.6",
+   "benchmark": "arena-expert",
+   "value": 1506.22,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/expert)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-sonnet-4.6",
+   "benchmark": "arena-hard",
+   "value": 1503.42,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/hard_prompts)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-sonnet-4.6",
+   "benchmark": "arena-instruct",
+   "value": 1474.36,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/instruction_following)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-sonnet-4.6",
+   "benchmark": "arena-legal",
+   "value": 1484.53,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_legal_and_government)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-sonnet-4.6",
+   "benchmark": "arena-math",
+   "value": 1463.02,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/math)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-sonnet-4.6",
+   "benchmark": "arena-medicine",
+   "value": 1488.11,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_medicine_and_healthcare)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-sonnet-4.6",
+   "benchmark": "arena-science",
+   "value": 1499.99,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_life_and_physical_and_social_science)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-sonnet-4.6",
+   "benchmark": "arena-search",
+   "value": 1201.93,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (search_style_control/overall)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-sonnet-4.6",
+   "benchmark": "arena-software",
+   "value": 1514.28,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_software_and_it_services)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-sonnet-4.6",
+   "benchmark": "arena-text",
+   "value": 1472.06,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/overall)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-sonnet-4.6",
+   "benchmark": "arena-vision",
+   "value": 1274.97,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (vision_style_control/overall)",
+   "asOf": "2026-10-09"
+  },
+  {
+   "model": "claude-sonnet-4.6",
+   "benchmark": "arena-webdev",
+   "value": 1522.33,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (webdev/overall)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-sonnet-4.6",
+   "benchmark": "arena-writing",
+   "value": 1455.2,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_writing_and_literature_and_language)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-sonnet-4.6",
+   "benchmark": "gpqa",
+   "value": 89.9,
+   "source": "https://www.codesota.com/browse/reasoning/multi-step-reasoning/gpqa",
+   "asOf": "2026-04-01",
+   "vendorReported": true
+  },
+  {
+   "model": "claude-sonnet-4.6",
+   "benchmark": "swe-bench-verified",
+   "value": 79.6,
+   "source": "https://www.codesota.com/browse/agentic/swe-bench/swe-bench-verified-agentic",
+   "asOf": "2026-04-01",
+   "vendorReported": true
+  },
+  {
+   "model": "claude-sonnet-5.5",
+   "benchmark": "arena-agent",
+   "value": 0.13,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (agent/overall)",
+   "asOf": "2026-10-14"
+  },
+  {
+   "model": "claude-sonnet-5.5",
+   "benchmark": "arena-business",
+   "value": 1466.65,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_business_and_management_and_financial_operations)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-sonnet-5.5",
+   "benchmark": "arena-coding",
+   "value": 1526.56,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/coding)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-sonnet-5.5",
+   "benchmark": "arena-creative",
+   "value": 1465.36,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/creative_writing)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-sonnet-5.5",
+   "benchmark": "arena-expert",
+   "value": 1540.05,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/expert)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-sonnet-5.5",
+   "benchmark": "arena-hard",
+   "value": 1504.58,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/hard_prompts)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-sonnet-5.5",
+   "benchmark": "arena-instruct",
+   "value": 1483.21,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/instruction_following)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-sonnet-5.5",
+   "benchmark": "arena-legal",
+   "value": 1495,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_legal_and_government)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-sonnet-5.5",
+   "benchmark": "arena-math",
+   "value": 1509.98,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/math)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-sonnet-5.5",
+   "benchmark": "arena-medicine",
+   "value": 1470,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_medicine_and_healthcare)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-sonnet-5.5",
+   "benchmark": "arena-science",
+   "value": 1491.49,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_life_and_physical_and_social_science)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-sonnet-5.5",
+   "benchmark": "arena-software",
+   "value": 1514.67,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_software_and_it_services)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-sonnet-5.5",
+   "benchmark": "arena-text",
+   "value": 1475.27,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/overall)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-sonnet-5.5",
+   "benchmark": "arena-vision",
+   "value": 1266.19,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (vision_style_control/overall)",
+   "asOf": "2026-10-09"
+  },
+  {
+   "model": "claude-sonnet-5.5",
+   "benchmark": "arena-webdev",
+   "value": 1773.66,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (webdev/overall)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-sonnet-5.5",
+   "benchmark": "arena-writing",
+   "value": 1470.54,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_writing_and_literature_and_language)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-sonnet-5",
+   "benchmark": "arena-agent",
+   "value": 0.05,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (agent/overall)",
+   "asOf": "2026-10-14"
+  },
+  {
+   "model": "claude-sonnet-5",
+   "benchmark": "arena-business",
+   "value": 1464.4,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_business_and_management_and_financial_operations)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-sonnet-5",
+   "benchmark": "arena-coding",
+   "value": 1519.77,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/coding)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-sonnet-5",
+   "benchmark": "arena-creative",
+   "value": 1435.62,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/creative_writing)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-sonnet-5",
+   "benchmark": "arena-document",
+   "value": 1475.7,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (document_style_control/overall)",
+   "asOf": "2026-09-13"
+  },
+  {
+   "model": "claude-sonnet-5",
+   "benchmark": "arena-expert",
+   "value": 1511.4,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/expert)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-sonnet-5",
+   "benchmark": "arena-hard",
+   "value": 1489.91,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/hard_prompts)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-sonnet-5",
+   "benchmark": "arena-instruct",
+   "value": 1466.37,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/instruction_following)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-sonnet-5",
+   "benchmark": "arena-legal",
+   "value": 1475.16,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_legal_and_government)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-sonnet-5",
+   "benchmark": "arena-math",
+   "value": 1473.21,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/math)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-sonnet-5",
+   "benchmark": "arena-medicine",
+   "value": 1479.18,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_medicine_and_healthcare)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-sonnet-5",
+   "benchmark": "arena-science",
+   "value": 1486.75,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_life_and_physical_and_social_science)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-sonnet-5",
+   "benchmark": "arena-search",
+   "value": 1193.16,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (search_style_control/overall)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-sonnet-5",
+   "benchmark": "arena-software",
+   "value": 1503.99,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_software_and_it_services)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-sonnet-5",
+   "benchmark": "arena-text",
+   "value": 1461.28,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/overall)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-sonnet-5",
+   "benchmark": "arena-vision",
+   "value": 1263.26,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (vision_style_control/overall)",
+   "asOf": "2026-10-09"
+  },
+  {
+   "model": "claude-sonnet-5",
+   "benchmark": "arena-webdev",
+   "value": 1539.92,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (webdev/overall)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "claude-sonnet-5",
+   "benchmark": "arena-writing",
+   "value": 1451.61,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_writing_and_literature_and_language)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gemini-3-flash",
+   "benchmark": "arena-business",
+   "value": 1468.61,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_business_and_management_and_financial_operations)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gemini-3-flash",
+   "benchmark": "arena-coding",
+   "value": 1505.77,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/coding)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gemini-3-flash",
+   "benchmark": "arena-creative",
+   "value": 1456.96,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/creative_writing)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gemini-3-flash",
+   "benchmark": "arena-document",
+   "value": 1439.15,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (document_style_control/overall)",
+   "asOf": "2026-09-13"
+  },
+  {
+   "model": "gemini-3-flash",
+   "benchmark": "arena-expert",
+   "value": 1497.22,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/expert)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gemini-3-flash",
+   "benchmark": "arena-hard",
+   "value": 1492.9,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/hard_prompts)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gemini-3-flash",
+   "benchmark": "arena-instruct",
+   "value": 1457.91,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/instruction_following)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gemini-3-flash",
+   "benchmark": "arena-legal",
+   "value": 1483.11,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_legal_and_government)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gemini-3-flash",
+   "benchmark": "arena-math",
+   "value": 1474.97,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/math)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gemini-3-flash",
+   "benchmark": "arena-medicine",
+   "value": 1481.66,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_medicine_and_healthcare)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gemini-3-flash",
+   "benchmark": "arena-science",
+   "value": 1486.99,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_life_and_physical_and_social_science)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gemini-3-flash",
+   "benchmark": "arena-search",
+   "value": 1188.68,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (search_style_control/overall)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gemini-3-flash",
+   "benchmark": "arena-software",
+   "value": 1500.78,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_software_and_it_services)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gemini-3-flash",
+   "benchmark": "arena-text",
+   "value": 1472.86,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/overall)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gemini-3-flash",
+   "benchmark": "arena-vision",
+   "value": 1272.82,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (vision_style_control/overall)",
+   "asOf": "2026-10-09"
+  },
+  {
+   "model": "gemini-3-flash",
+   "benchmark": "arena-webdev",
+   "value": 1439.98,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (webdev/overall)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gemini-3-flash",
+   "benchmark": "arena-writing",
+   "value": 1461.31,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_writing_and_literature_and_language)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gemini-3-flash",
+   "benchmark": "gpqa",
+   "value": 90.4,
+   "source": "https://www.codesota.com/browse/reasoning/multi-step-reasoning/gpqa",
+   "asOf": "2026-04-01",
+   "vendorReported": true
+  },
+  {
+   "model": "gemini-3-flash",
+   "benchmark": "swe-bench-pro",
+   "value": 34.63,
+   "source": "https://scale.com/leaderboard/swe_bench_pro_public",
+   "asOf": "2026-10-15"
+  },
+  {
+   "model": "gemini-3-flash",
+   "benchmark": "swe-bench-verified",
+   "value": 78,
+   "source": "https://www.codesota.com/browse/agentic/swe-bench/swe-bench-verified-agentic",
+   "asOf": "2026-04-01",
+   "vendorReported": true
+  },
+  {
+   "model": "gemini-3-pro",
+   "benchmark": "arena-business",
+   "value": 1473.86,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_business_and_management_and_financial_operations)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gemini-3-pro",
+   "benchmark": "arena-coding",
+   "value": 1517.23,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/coding)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gemini-3-pro",
+   "benchmark": "arena-creative",
+   "value": 1484.37,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/creative_writing)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gemini-3-pro",
+   "benchmark": "arena-document",
+   "value": 1451.09,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (document_style_control/overall)",
+   "asOf": "2026-09-13"
+  },
+  {
+   "model": "gemini-3-pro",
+   "benchmark": "arena-expert",
+   "value": 1498.51,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/expert)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gemini-3-pro",
+   "benchmark": "arena-hard",
+   "value": 1502.35,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/hard_prompts)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gemini-3-pro",
+   "benchmark": "arena-instruct",
+   "value": 1472.46,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/instruction_following)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gemini-3-pro",
+   "benchmark": "arena-legal",
+   "value": 1500.92,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_legal_and_government)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gemini-3-pro",
+   "benchmark": "arena-math",
+   "value": 1477.1,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/math)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gemini-3-pro",
+   "benchmark": "arena-medicine",
+   "value": 1509.11,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_medicine_and_healthcare)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gemini-3-pro",
+   "benchmark": "arena-science",
+   "value": 1497.55,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_life_and_physical_and_social_science)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gemini-3-pro",
+   "benchmark": "arena-search",
+   "value": 1200.75,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (search_style_control/overall)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gemini-3-pro",
+   "benchmark": "arena-software",
+   "value": 1509.34,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_software_and_it_services)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gemini-3-pro",
+   "benchmark": "arena-text",
+   "value": 1485.42,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/overall)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gemini-3-pro",
+   "benchmark": "arena-vision",
+   "value": 1289.32,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (vision_style_control/overall)",
+   "asOf": "2026-10-09"
+  },
+  {
+   "model": "gemini-3-pro",
+   "benchmark": "arena-webdev",
+   "value": 1439.94,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (webdev/overall)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gemini-3-pro",
+   "benchmark": "arena-writing",
+   "value": 1481.07,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_writing_and_literature_and_language)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gemini-3-pro",
+   "benchmark": "gpqa",
+   "value": 91.9,
+   "source": "https://www.codesota.com/browse/reasoning/multi-step-reasoning/gpqa",
+   "asOf": "2026-04-01",
+   "vendorReported": true
+  },
+  {
+   "model": "gemini-3-pro",
+   "benchmark": "swe-bench-pro",
+   "value": 43.3,
+   "source": "https://scale.com/leaderboard/swe_bench_pro_public",
+   "asOf": "2026-10-15"
+  },
+  {
+   "model": "gemini-3-pro",
+   "benchmark": "swe-bench-verified",
+   "value": 76.2,
+   "source": "https://www.codesota.com/browse/agentic/swe-bench/swe-bench-verified-agentic",
+   "asOf": "2026-04-01",
+   "vendorReported": true
+  },
+  {
+   "model": "gemini-3-pro",
+   "benchmark": "terminal-bench-2",
+   "value": 69.4,
+   "source": "https://www.codesota.com/browse/agentic/autonomous-coding/terminal-bench-2",
+   "asOf": "2026-04-01"
+  },
+  {
+   "model": "gemini-3.1-pro",
+   "benchmark": "arena-agent",
+   "value": -0.04,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (agent/overall)",
+   "asOf": "2026-10-14"
+  },
+  {
+   "model": "gemini-3.1-pro",
+   "benchmark": "arena-business",
+   "value": 1478.19,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_business_and_management_and_financial_operations)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gemini-3.1-pro",
+   "benchmark": "arena-coding",
+   "value": 1521.41,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/coding)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gemini-3.1-pro",
+   "benchmark": "arena-creative",
+   "value": 1480.91,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/creative_writing)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gemini-3.1-pro",
+   "benchmark": "arena-document",
+   "value": 1458.86,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (document_style_control/overall)",
+   "asOf": "2026-09-13"
+  },
+  {
+   "model": "gemini-3.1-pro",
+   "benchmark": "arena-expert",
+   "value": 1509.18,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/expert)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gemini-3.1-pro",
+   "benchmark": "arena-hard",
+   "value": 1507.85,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/hard_prompts)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gemini-3.1-pro",
+   "benchmark": "arena-instruct",
+   "value": 1479.85,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/instruction_following)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gemini-3.1-pro",
+   "benchmark": "arena-legal",
+   "value": 1498.39,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_legal_and_government)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gemini-3.1-pro",
+   "benchmark": "arena-math",
+   "value": 1488.82,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/math)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gemini-3.1-pro",
+   "benchmark": "arena-medicine",
+   "value": 1504.37,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_medicine_and_healthcare)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gemini-3.1-pro",
+   "benchmark": "arena-science",
+   "value": 1510.63,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_life_and_physical_and_social_science)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gemini-3.1-pro",
+   "benchmark": "arena-search",
+   "value": 1206.62,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (search_style_control/overall)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gemini-3.1-pro",
+   "benchmark": "arena-software",
+   "value": 1512.87,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_software_and_it_services)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gemini-3.1-pro",
+   "benchmark": "arena-text",
+   "value": 1487.08,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/overall)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gemini-3.1-pro",
+   "benchmark": "arena-vision",
+   "value": 1279.78,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (vision_style_control/overall)",
+   "asOf": "2026-10-09"
+  },
+  {
+   "model": "gemini-3.1-pro",
+   "benchmark": "arena-webdev",
+   "value": 1446.7,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (webdev/overall)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gemini-3.1-pro",
+   "benchmark": "arena-writing",
+   "value": 1481.56,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_writing_and_literature_and_language)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gemini-3.1-pro",
+   "benchmark": "swe-bench-pro",
+   "value": 46.1,
+   "source": "https://scale.com/leaderboard/swe_bench_pro_public",
+   "asOf": "2026-10-15"
+  },
+  {
+   "model": "gemini-3.1-pro",
+   "benchmark": "swe-bench-verified",
+   "value": 80.6,
+   "source": "https://www.codesota.com/browse/agentic/swe-bench/swe-bench-verified-agentic",
+   "asOf": "2026-04-01",
+   "vendorReported": true
+  },
+  {
+   "model": "gemini-3.1-pro",
+   "benchmark": "terminal-bench-2",
+   "value": 78.4,
+   "source": "https://www.codesota.com/browse/agentic/autonomous-coding/terminal-bench-2",
+   "asOf": "2026-04-01"
+  },
+  {
+   "model": "gemini-3.7-flash",
+   "benchmark": "arena-agent",
+   "value": 0,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (agent/overall)",
+   "asOf": "2026-10-14"
+  },
+  {
+   "model": "gemini-3.7-flash",
+   "benchmark": "arena-business",
+   "value": 1482.82,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_business_and_management_and_financial_operations)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gemini-3.7-flash",
+   "benchmark": "arena-coding",
+   "value": 1516.23,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/coding)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gemini-3.7-flash",
+   "benchmark": "arena-creative",
+   "value": 1491.97,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/creative_writing)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gemini-3.7-flash",
+   "benchmark": "arena-expert",
+   "value": 1511.91,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/expert)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gemini-3.7-flash",
+   "benchmark": "arena-hard",
+   "value": 1506.26,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/hard_prompts)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gemini-3.7-flash",
+   "benchmark": "arena-instruct",
+   "value": 1484.31,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/instruction_following)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gemini-3.7-flash",
+   "benchmark": "arena-legal",
+   "value": 1492.06,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_legal_and_government)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gemini-3.7-flash",
+   "benchmark": "arena-math",
+   "value": 1506.76,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/math)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gemini-3.7-flash",
+   "benchmark": "arena-medicine",
+   "value": 1500.55,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_medicine_and_healthcare)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gemini-3.7-flash",
+   "benchmark": "arena-science",
+   "value": 1511.22,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_life_and_physical_and_social_science)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gemini-3.7-flash",
+   "benchmark": "arena-software",
+   "value": 1509.44,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_software_and_it_services)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gemini-3.7-flash",
+   "benchmark": "arena-text",
+   "value": 1487.39,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/overall)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gemini-3.7-flash",
+   "benchmark": "arena-vision",
+   "value": 1296.87,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (vision_style_control/overall)",
+   "asOf": "2026-10-09"
+  },
+  {
+   "model": "gemini-3.7-flash",
+   "benchmark": "arena-webdev",
+   "value": 1589.91,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (webdev/overall)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gemini-3.7-flash",
+   "benchmark": "arena-writing",
+   "value": 1493.47,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_writing_and_literature_and_language)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gemini-3.8-flash",
+   "benchmark": "arena-agent",
+   "value": 0.04,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (agent/overall)",
+   "asOf": "2026-10-14"
+  },
+  {
+   "model": "gemini-3.8-flash",
+   "benchmark": "arena-business",
+   "value": 1479.89,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_business_and_management_and_financial_operations)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gemini-3.8-flash",
+   "benchmark": "arena-coding",
+   "value": 1527.42,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/coding)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gemini-3.8-flash",
+   "benchmark": "arena-creative",
+   "value": 1486.54,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/creative_writing)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gemini-3.8-flash",
+   "benchmark": "arena-expert",
+   "value": 1524.87,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/expert)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gemini-3.8-flash",
+   "benchmark": "arena-hard",
+   "value": 1516.64,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/hard_prompts)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gemini-3.8-flash",
+   "benchmark": "arena-instruct",
+   "value": 1489.11,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/instruction_following)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gemini-3.8-flash",
+   "benchmark": "arena-legal",
+   "value": 1491.81,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_legal_and_government)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gemini-3.8-flash",
+   "benchmark": "arena-math",
+   "value": 1522.42,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/math)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gemini-3.8-flash",
+   "benchmark": "arena-medicine",
+   "value": 1508.49,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_medicine_and_healthcare)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gemini-3.8-flash",
+   "benchmark": "arena-science",
+   "value": 1516.75,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_life_and_physical_and_social_science)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gemini-3.8-flash",
+   "benchmark": "arena-software",
+   "value": 1516.59,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_software_and_it_services)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gemini-3.8-flash",
+   "benchmark": "arena-text",
+   "value": 1496.32,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/overall)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gemini-3.8-flash",
+   "benchmark": "arena-vision",
+   "value": 1289.13,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (vision_style_control/overall)",
+   "asOf": "2026-10-09"
+  },
+  {
+   "model": "gemini-3.8-flash",
+   "benchmark": "arena-webdev",
+   "value": 1584.77,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (webdev/overall)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gemini-3.8-flash",
+   "benchmark": "arena-writing",
+   "value": 1491.46,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_writing_and_literature_and_language)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gemini-4-argon",
+   "benchmark": "arena-agent",
+   "value": 0.14,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (agent/overall)",
+   "asOf": "2026-10-14"
+  },
+  {
+   "model": "gemini-4-argon",
+   "benchmark": "arena-business",
+   "value": 1521.1,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_business_and_management_and_financial_operations)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gemini-4-argon",
+   "benchmark": "arena-coding",
+   "value": 1560.58,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/coding)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gemini-4-argon",
+   "benchmark": "arena-creative",
+   "value": 1516.32,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/creative_writing)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gemini-4-argon",
+   "benchmark": "arena-expert",
+   "value": 1541.63,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/expert)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gemini-4-argon",
+   "benchmark": "arena-hard",
+   "value": 1549.86,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/hard_prompts)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gemini-4-argon",
+   "benchmark": "arena-instruct",
+   "value": 1528.14,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/instruction_following)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gemini-4-argon",
+   "benchmark": "arena-legal",
+   "value": 1535.33,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_legal_and_government)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gemini-4-argon",
+   "benchmark": "arena-math",
+   "value": 1528.6,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/math)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gemini-4-argon",
+   "benchmark": "arena-medicine",
+   "value": 1550.01,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_medicine_and_healthcare)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gemini-4-argon",
+   "benchmark": "arena-science",
+   "value": 1539.33,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_life_and_physical_and_social_science)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gemini-4-argon",
+   "benchmark": "arena-software",
+   "value": 1562.76,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_software_and_it_services)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gemini-4-argon",
+   "benchmark": "arena-text",
+   "value": 1524.77,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/overall)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gemini-4-argon",
+   "benchmark": "arena-webdev",
+   "value": 1677.96,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (webdev/overall)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gemini-4-argon",
+   "benchmark": "arena-writing",
+   "value": 1521.3,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_writing_and_literature_and_language)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gpt-5.3-codex",
+   "benchmark": "arena-webdev",
+   "value": 1406.04,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (webdev/overall)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gpt-5.3-codex",
+   "benchmark": "terminal-bench-2",
+   "value": 74.85,
+   "source": "https://www.codesota.com/browse/agentic/autonomous-coding/terminal-bench-2",
+   "asOf": "2026-04-01"
+  },
+  {
+   "model": "gpt-5.4",
+   "benchmark": "arena-agent",
+   "value": 0.02,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (agent/overall)",
+   "asOf": "2026-10-14"
+  },
+  {
+   "model": "gpt-5.4",
+   "benchmark": "arena-business",
+   "value": 1481.48,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_business_and_management_and_financial_operations)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gpt-5.4",
+   "benchmark": "arena-coding",
+   "value": 1520.36,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/coding)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gpt-5.4",
+   "benchmark": "arena-creative",
+   "value": 1442.01,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/creative_writing)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gpt-5.4",
+   "benchmark": "arena-document",
+   "value": 1470.09,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (document_style_control/overall)",
+   "asOf": "2026-09-13"
+  },
+  {
+   "model": "gpt-5.4",
+   "benchmark": "arena-expert",
+   "value": 1514.4,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/expert)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gpt-5.4",
+   "benchmark": "arena-hard",
+   "value": 1496.34,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/hard_prompts)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gpt-5.4",
+   "benchmark": "arena-instruct",
+   "value": 1470.85,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/instruction_following)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gpt-5.4",
+   "benchmark": "arena-legal",
+   "value": 1490.03,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_legal_and_government)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gpt-5.4",
+   "benchmark": "arena-math",
+   "value": 1491.23,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/math)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gpt-5.4",
+   "benchmark": "arena-medicine",
+   "value": 1474.51,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_medicine_and_healthcare)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gpt-5.4",
+   "benchmark": "arena-science",
+   "value": 1487.53,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_life_and_physical_and_social_science)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gpt-5.4",
+   "benchmark": "arena-search",
+   "value": 1196.26,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (search_style_control/overall)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gpt-5.4",
+   "benchmark": "arena-software",
+   "value": 1506.59,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_software_and_it_services)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gpt-5.4",
+   "benchmark": "arena-text",
+   "value": 1475.07,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/overall)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gpt-5.4",
+   "benchmark": "arena-vision",
+   "value": 1284.99,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (vision_style_control/overall)",
+   "asOf": "2026-10-09"
+  },
+  {
+   "model": "gpt-5.4",
+   "benchmark": "arena-webdev",
+   "value": 1462.89,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (webdev/overall)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gpt-5.4",
+   "benchmark": "arena-writing",
+   "value": 1464.02,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_writing_and_literature_and_language)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gpt-5.4",
+   "benchmark": "swe-bench-pro",
+   "value": 59.1,
+   "source": "https://scale.com/leaderboard/swe_bench_pro_public",
+   "asOf": "2026-10-15"
+  },
+  {
+   "model": "gpt-5.4",
+   "benchmark": "terminal-bench-2",
+   "value": 81.8,
+   "source": "https://www.codesota.com/browse/agentic/autonomous-coding/terminal-bench-2",
+   "asOf": "2026-04-01"
+  },
+  {
+   "model": "gpt-5.5",
+   "benchmark": "arena-agent",
+   "value": 0.03,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (agent/overall)",
+   "asOf": "2026-10-14"
+  },
+  {
+   "model": "gpt-5.5",
+   "benchmark": "arena-business",
+   "value": 1489.79,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_business_and_management_and_financial_operations)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gpt-5.5",
+   "benchmark": "arena-coding",
+   "value": 1518.54,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/coding)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gpt-5.5",
+   "benchmark": "arena-creative",
+   "value": 1455.13,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/creative_writing)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gpt-5.5",
+   "benchmark": "arena-document",
+   "value": 1482.81,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (document_style_control/overall)",
+   "asOf": "2026-09-13"
+  },
+  {
+   "model": "gpt-5.5",
+   "benchmark": "arena-expert",
+   "value": 1512.03,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/expert)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gpt-5.5",
+   "benchmark": "arena-hard",
+   "value": 1501.09,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/hard_prompts)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gpt-5.5",
+   "benchmark": "arena-instruct",
+   "value": 1477.7,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/instruction_following)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gpt-5.5",
+   "benchmark": "arena-legal",
+   "value": 1495.04,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_legal_and_government)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gpt-5.5",
+   "benchmark": "arena-math",
+   "value": 1500.25,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/math)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gpt-5.5",
+   "benchmark": "arena-medicine",
+   "value": 1486.85,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_medicine_and_healthcare)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gpt-5.5",
+   "benchmark": "arena-science",
+   "value": 1497.9,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_life_and_physical_and_social_science)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gpt-5.5",
+   "benchmark": "arena-search",
+   "value": 1226.45,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (search_style_control/overall)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gpt-5.5",
+   "benchmark": "arena-software",
+   "value": 1510.41,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_software_and_it_services)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gpt-5.5",
+   "benchmark": "arena-text",
+   "value": 1481.44,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/overall)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gpt-5.5",
+   "benchmark": "arena-vision",
+   "value": 1285.78,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (vision_style_control/overall)",
+   "asOf": "2026-10-09"
+  },
+  {
+   "model": "gpt-5.5",
+   "benchmark": "arena-webdev",
+   "value": 1512.74,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (webdev/overall)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gpt-5.5",
+   "benchmark": "arena-writing",
+   "value": 1469.12,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_writing_and_literature_and_language)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gpt-5.5",
+   "benchmark": "terminal-bench-2",
+   "value": 82,
+   "source": "https://www.codesota.com/browse/agentic/autonomous-coding/terminal-bench-2",
+   "asOf": "2026-04-01"
+  },
+  {
+   "model": "gpt-5.6-sol",
+   "benchmark": "arena-agent",
+   "value": 0.07,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (agent/overall)",
+   "asOf": "2026-10-14"
+  },
+  {
+   "model": "gpt-5.6-sol",
+   "benchmark": "arena-business",
+   "value": 1486.4,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_business_and_management_and_financial_operations)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gpt-5.6-sol",
+   "benchmark": "arena-coding",
+   "value": 1534.27,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/coding)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gpt-5.6-sol",
+   "benchmark": "arena-creative",
+   "value": 1468.65,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/creative_writing)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gpt-5.6-sol",
+   "benchmark": "arena-document",
+   "value": 1488.67,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (document_style_control/overall)",
+   "asOf": "2026-09-13"
+  },
+  {
+   "model": "gpt-5.6-sol",
+   "benchmark": "arena-expert",
+   "value": 1532.79,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/expert)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gpt-5.6-sol",
+   "benchmark": "arena-hard",
+   "value": 1511.34,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/hard_prompts)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gpt-5.6-sol",
+   "benchmark": "arena-instruct",
+   "value": 1490.25,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/instruction_following)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gpt-5.6-sol",
+   "benchmark": "arena-legal",
+   "value": 1498.54,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_legal_and_government)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gpt-5.6-sol",
+   "benchmark": "arena-math",
+   "value": 1495.79,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/math)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gpt-5.6-sol",
+   "benchmark": "arena-medicine",
+   "value": 1479.17,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_medicine_and_healthcare)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gpt-5.6-sol",
+   "benchmark": "arena-science",
+   "value": 1490.05,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_life_and_physical_and_social_science)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gpt-5.6-sol",
+   "benchmark": "arena-search",
+   "value": 1257.93,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (search_style_control/overall)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gpt-5.6-sol",
+   "benchmark": "arena-software",
+   "value": 1523.66,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_software_and_it_services)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gpt-5.6-sol",
+   "benchmark": "arena-text",
+   "value": 1484.86,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/overall)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gpt-5.6-sol",
+   "benchmark": "arena-vision",
+   "value": 1286.96,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (vision_style_control/overall)",
+   "asOf": "2026-10-09"
+  },
+  {
+   "model": "gpt-5.6-sol",
+   "benchmark": "arena-webdev",
+   "value": 1617.03,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (webdev/overall)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gpt-5.6-sol",
+   "benchmark": "arena-writing",
+   "value": 1481.87,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_writing_and_literature_and_language)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gpt-6-astra",
+   "benchmark": "arena-agent",
+   "value": 0.14,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (agent/overall)",
+   "asOf": "2026-10-14"
+  },
+  {
+   "model": "gpt-6-astra",
+   "benchmark": "arena-business",
+   "value": 1472.34,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_business_and_management_and_financial_operations)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gpt-6-astra",
+   "benchmark": "arena-coding",
+   "value": 1543.16,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/coding)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gpt-6-astra",
+   "benchmark": "arena-creative",
+   "value": 1449.58,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/creative_writing)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gpt-6-astra",
+   "benchmark": "arena-document",
+   "value": 1472.56,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (document_style_control/overall)",
+   "asOf": "2026-09-13"
+  },
+  {
+   "model": "gpt-6-astra",
+   "benchmark": "arena-expert",
+   "value": 1509.9,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/expert)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gpt-6-astra",
+   "benchmark": "arena-hard",
+   "value": 1502.02,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/hard_prompts)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gpt-6-astra",
+   "benchmark": "arena-instruct",
+   "value": 1471.99,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/instruction_following)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gpt-6-astra",
+   "benchmark": "arena-legal",
+   "value": 1486.12,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_legal_and_government)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gpt-6-astra",
+   "benchmark": "arena-math",
+   "value": 1481.64,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/math)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gpt-6-astra",
+   "benchmark": "arena-medicine",
+   "value": 1469.19,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_medicine_and_healthcare)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gpt-6-astra",
+   "benchmark": "arena-science",
+   "value": 1489.3,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_life_and_physical_and_social_science)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gpt-6-astra",
+   "benchmark": "arena-search",
+   "value": 1246.24,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (search_style_control/overall)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gpt-6-astra",
+   "benchmark": "arena-software",
+   "value": 1522.27,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_software_and_it_services)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gpt-6-astra",
+   "benchmark": "arena-text",
+   "value": 1476.72,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/overall)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gpt-6-astra",
+   "benchmark": "arena-vision",
+   "value": 1285.99,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (vision_style_control/overall)",
+   "asOf": "2026-10-09"
+  },
+  {
+   "model": "gpt-6-astra",
+   "benchmark": "arena-webdev",
+   "value": 1780.24,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (webdev/overall)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gpt-6-astra",
+   "benchmark": "arena-writing",
+   "value": 1464.25,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_writing_and_literature_and_language)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gpt-6-sol",
+   "benchmark": "arena-agent",
+   "value": 0.11,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (agent/overall)",
+   "asOf": "2026-10-14"
+  },
+  {
+   "model": "gpt-6-sol",
+   "benchmark": "arena-business",
+   "value": 1447.17,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_business_and_management_and_financial_operations)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gpt-6-sol",
+   "benchmark": "arena-coding",
+   "value": 1518.38,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/coding)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gpt-6-sol",
+   "benchmark": "arena-creative",
+   "value": 1441.26,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/creative_writing)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gpt-6-sol",
+   "benchmark": "arena-expert",
+   "value": 1497.91,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/expert)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gpt-6-sol",
+   "benchmark": "arena-hard",
+   "value": 1484.33,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/hard_prompts)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gpt-6-sol",
+   "benchmark": "arena-instruct",
+   "value": 1451.84,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/instruction_following)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gpt-6-sol",
+   "benchmark": "arena-legal",
+   "value": 1464.42,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_legal_and_government)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gpt-6-sol",
+   "benchmark": "arena-math",
+   "value": 1452.74,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/math)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gpt-6-sol",
+   "benchmark": "arena-medicine",
+   "value": 1452.77,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_medicine_and_healthcare)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gpt-6-sol",
+   "benchmark": "arena-science",
+   "value": 1470.43,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_life_and_physical_and_social_science)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gpt-6-sol",
+   "benchmark": "arena-search",
+   "value": 1228.21,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (search_style_control/overall)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gpt-6-sol",
+   "benchmark": "arena-software",
+   "value": 1503.78,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_software_and_it_services)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gpt-6-sol",
+   "benchmark": "arena-text",
+   "value": 1458.27,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/overall)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gpt-6-sol",
+   "benchmark": "arena-vision",
+   "value": 1270.4,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (vision_style_control/overall)",
+   "asOf": "2026-10-09"
+  },
+  {
+   "model": "gpt-6-sol",
+   "benchmark": "arena-webdev",
+   "value": 1685.86,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (webdev/overall)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gpt-6-sol",
+   "benchmark": "arena-writing",
+   "value": 1440.52,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_writing_and_literature_and_language)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gpt-6.1-sol",
+   "benchmark": "arena-agent",
+   "value": 0.15,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (agent/overall)",
+   "asOf": "2026-10-14"
+  },
+  {
+   "model": "gpt-6.1-sol",
+   "benchmark": "arena-business",
+   "value": 1483.74,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_business_and_management_and_financial_operations)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gpt-6.1-sol",
+   "benchmark": "arena-coding",
+   "value": 1538.32,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/coding)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gpt-6.1-sol",
+   "benchmark": "arena-creative",
+   "value": 1460.41,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/creative_writing)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gpt-6.1-sol",
+   "benchmark": "arena-expert",
+   "value": 1520.44,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/expert)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gpt-6.1-sol",
+   "benchmark": "arena-hard",
+   "value": 1506.78,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/hard_prompts)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gpt-6.1-sol",
+   "benchmark": "arena-instruct",
+   "value": 1487.81,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/instruction_following)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gpt-6.1-sol",
+   "benchmark": "arena-legal",
+   "value": 1497.42,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_legal_and_government)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gpt-6.1-sol",
+   "benchmark": "arena-math",
+   "value": 1491.22,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/math)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gpt-6.1-sol",
+   "benchmark": "arena-medicine",
+   "value": 1490.37,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_medicine_and_healthcare)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gpt-6.1-sol",
+   "benchmark": "arena-science",
+   "value": 1492.52,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_life_and_physical_and_social_science)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gpt-6.1-sol",
+   "benchmark": "arena-search",
+   "value": 1249.92,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (search_style_control/overall)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gpt-6.1-sol",
+   "benchmark": "arena-software",
+   "value": 1530.93,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_software_and_it_services)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gpt-6.1-sol",
+   "benchmark": "arena-text",
+   "value": 1483.96,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/overall)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gpt-6.1-sol",
+   "benchmark": "arena-vision",
+   "value": 1294.05,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (vision_style_control/overall)",
+   "asOf": "2026-10-09"
+  },
+  {
+   "model": "gpt-6.1-sol",
+   "benchmark": "arena-webdev",
+   "value": 1760.09,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (webdev/overall)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gpt-6.1-sol",
+   "benchmark": "arena-writing",
+   "value": 1478.53,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_writing_and_literature_and_language)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gpt-image-2.5",
+   "benchmark": "arena-t2i",
+   "value": 1424.55,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_to_image/overall)",
+   "asOf": "2026-10-07"
+  },
+  {
+   "model": "gpt-image-2",
+   "benchmark": "arena-t2i",
+   "value": 1383.04,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_to_image/overall)",
+   "asOf": "2026-10-07"
+  },
+  {
+   "model": "gpt-oss-120b",
+   "benchmark": "arena-business",
+   "value": 1352.15,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_business_and_management_and_financial_operations)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gpt-oss-120b",
+   "benchmark": "arena-coding",
+   "value": 1389.16,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/coding)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gpt-oss-120b",
+   "benchmark": "arena-creative",
+   "value": 1279.08,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/creative_writing)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gpt-oss-120b",
+   "benchmark": "arena-expert",
+   "value": 1357.83,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/expert)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gpt-oss-120b",
+   "benchmark": "arena-hard",
+   "value": 1361.89,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/hard_prompts)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gpt-oss-120b",
+   "benchmark": "arena-instruct",
+   "value": 1323.51,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/instruction_following)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gpt-oss-120b",
+   "benchmark": "arena-legal",
+   "value": 1340.08,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_legal_and_government)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gpt-oss-120b",
+   "benchmark": "arena-math",
+   "value": 1381.12,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/math)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gpt-oss-120b",
+   "benchmark": "arena-medicine",
+   "value": 1367.2,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_medicine_and_healthcare)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gpt-oss-120b",
+   "benchmark": "arena-science",
+   "value": 1361.41,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_life_and_physical_and_social_science)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gpt-oss-120b",
+   "benchmark": "arena-software",
+   "value": 1385.11,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_software_and_it_services)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gpt-oss-120b",
+   "benchmark": "arena-text",
+   "value": 1351.7,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/overall)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gpt-oss-120b",
+   "benchmark": "arena-writing",
+   "value": 1309.92,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_writing_and_literature_and_language)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "gpt-oss-120b",
+   "benchmark": "swe-bench-pro",
+   "value": 16.2,
+   "source": "https://scale.com/leaderboard/swe_bench_pro_public",
+   "asOf": "2026-10-15"
+  },
+  {
+   "model": "grok-4.5",
+   "benchmark": "arena-agent",
+   "value": 0,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (agent/overall)",
+   "asOf": "2026-10-14"
+  },
+  {
+   "model": "grok-4.5",
+   "benchmark": "arena-business",
+   "value": 1465.37,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_business_and_management_and_financial_operations)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "grok-4.5",
+   "benchmark": "arena-coding",
+   "value": 1513.67,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/coding)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "grok-4.5",
+   "benchmark": "arena-creative",
+   "value": 1451.65,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/creative_writing)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "grok-4.5",
+   "benchmark": "arena-document",
+   "value": 1464.35,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (document_style_control/overall)",
+   "asOf": "2026-09-13"
+  },
+  {
+   "model": "grok-4.5",
+   "benchmark": "arena-expert",
+   "value": 1488.22,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/expert)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "grok-4.5",
+   "benchmark": "arena-hard",
+   "value": 1488.19,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/hard_prompts)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "grok-4.5",
+   "benchmark": "arena-instruct",
+   "value": 1461.25,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/instruction_following)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "grok-4.5",
+   "benchmark": "arena-legal",
+   "value": 1477.73,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_legal_and_government)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "grok-4.5",
+   "benchmark": "arena-math",
+   "value": 1472.39,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/math)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "grok-4.5",
+   "benchmark": "arena-medicine",
+   "value": 1465.1,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_medicine_and_healthcare)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "grok-4.5",
+   "benchmark": "arena-science",
+   "value": 1483.77,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_life_and_physical_and_social_science)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "grok-4.5",
+   "benchmark": "arena-search",
+   "value": 1206.19,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (search_style_control/overall)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "grok-4.5",
+   "benchmark": "arena-software",
+   "value": 1502.17,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_software_and_it_services)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "grok-4.5",
+   "benchmark": "arena-text",
+   "value": 1465.73,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/overall)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "grok-4.5",
+   "benchmark": "arena-vision",
+   "value": 1280.02,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (vision_style_control/overall)",
+   "asOf": "2026-10-09"
+  },
+  {
+   "model": "grok-4.5",
+   "benchmark": "arena-webdev",
+   "value": 1552.93,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (webdev/overall)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "grok-4.5",
+   "benchmark": "arena-writing",
+   "value": 1458.67,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_writing_and_literature_and_language)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "grok-4.6",
+   "benchmark": "arena-agent",
+   "value": 0.01,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (agent/overall)",
+   "asOf": "2026-10-14"
+  },
+  {
+   "model": "grok-4.6",
+   "benchmark": "arena-business",
+   "value": 1447.73,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_business_and_management_and_financial_operations)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "grok-4.6",
+   "benchmark": "arena-coding",
+   "value": 1509.62,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/coding)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "grok-4.6",
+   "benchmark": "arena-creative",
+   "value": 1443.01,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/creative_writing)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "grok-4.6",
+   "benchmark": "arena-document",
+   "value": 1461.07,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (document_style_control/overall)",
+   "asOf": "2026-09-13"
+  },
+  {
+   "model": "grok-4.6",
+   "benchmark": "arena-expert",
+   "value": 1495.58,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/expert)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "grok-4.6",
+   "benchmark": "arena-hard",
+   "value": 1480.64,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/hard_prompts)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "grok-4.6",
+   "benchmark": "arena-instruct",
+   "value": 1451.58,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/instruction_following)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "grok-4.6",
+   "benchmark": "arena-legal",
+   "value": 1451.24,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_legal_and_government)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "grok-4.6",
+   "benchmark": "arena-math",
+   "value": 1446.95,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/math)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "grok-4.6",
+   "benchmark": "arena-medicine",
+   "value": 1459.89,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_medicine_and_healthcare)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "grok-4.6",
+   "benchmark": "arena-science",
+   "value": 1470.68,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_life_and_physical_and_social_science)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "grok-4.6",
+   "benchmark": "arena-software",
+   "value": 1495.5,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_software_and_it_services)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "grok-4.6",
+   "benchmark": "arena-text",
+   "value": 1454.98,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/overall)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "grok-4.6",
+   "benchmark": "arena-vision",
+   "value": 1261.87,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (vision_style_control/overall)",
+   "asOf": "2026-10-09"
+  },
+  {
+   "model": "grok-4.6",
+   "benchmark": "arena-webdev",
+   "value": 1617.4,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (webdev/overall)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "grok-4.6",
+   "benchmark": "arena-writing",
+   "value": 1445.89,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_writing_and_literature_and_language)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "kimi-k2.5",
+   "benchmark": "arena-business",
+   "value": 1440.49,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_business_and_management_and_financial_operations)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "kimi-k2.5",
+   "benchmark": "arena-coding",
+   "value": 1504,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/coding)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "kimi-k2.5",
+   "benchmark": "arena-creative",
+   "value": 1422.69,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/creative_writing)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "kimi-k2.5",
+   "benchmark": "arena-document",
+   "value": 1435.96,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (document_style_control/overall)",
+   "asOf": "2026-09-13"
+  },
+  {
+   "model": "kimi-k2.5",
+   "benchmark": "arena-expert",
+   "value": 1482.42,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/expert)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "kimi-k2.5",
+   "benchmark": "arena-hard",
+   "value": 1471.22,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/hard_prompts)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "kimi-k2.5",
+   "benchmark": "arena-instruct",
+   "value": 1439.02,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/instruction_following)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "kimi-k2.5",
+   "benchmark": "arena-legal",
+   "value": 1446.15,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_legal_and_government)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "kimi-k2.5",
+   "benchmark": "arena-math",
+   "value": 1471.06,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/math)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "kimi-k2.5",
+   "benchmark": "arena-medicine",
+   "value": 1465.18,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_medicine_and_healthcare)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "kimi-k2.5",
+   "benchmark": "arena-science",
+   "value": 1469.77,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_life_and_physical_and_social_science)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "kimi-k2.5",
+   "benchmark": "arena-software",
+   "value": 1489.51,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_software_and_it_services)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "kimi-k2.5",
+   "benchmark": "arena-text",
+   "value": 1449.85,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/overall)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "kimi-k2.5",
+   "benchmark": "arena-vision",
+   "value": 1252.14,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (vision_style_control/overall)",
+   "asOf": "2026-10-09"
+  },
+  {
+   "model": "kimi-k2.5",
+   "benchmark": "arena-webdev",
+   "value": 1436.47,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (webdev/overall)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "kimi-k2.5",
+   "benchmark": "arena-writing",
+   "value": 1427.14,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_writing_and_literature_and_language)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "kimi-k2.5",
+   "benchmark": "swe-bench-verified",
+   "value": 76.8,
+   "source": "https://www.codesota.com/browse/agentic/swe-bench/swe-bench-verified-agentic",
+   "asOf": "2026-04-01",
+   "vendorReported": true
+  },
+  {
+   "model": "kimi-k2.6",
+   "benchmark": "arena-business",
+   "value": 1454.55,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_business_and_management_and_financial_operations)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "kimi-k2.6",
+   "benchmark": "arena-coding",
+   "value": 1515.79,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/coding)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "kimi-k2.6",
+   "benchmark": "arena-creative",
+   "value": 1432.67,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/creative_writing)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "kimi-k2.6",
+   "benchmark": "arena-document",
+   "value": 1449.8,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (document_style_control/overall)",
+   "asOf": "2026-09-13"
+  },
+  {
+   "model": "kimi-k2.6",
+   "benchmark": "arena-expert",
+   "value": 1502.72,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/expert)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "kimi-k2.6",
+   "benchmark": "arena-hard",
+   "value": 1485.51,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/hard_prompts)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "kimi-k2.6",
+   "benchmark": "arena-instruct",
+   "value": 1455.7,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/instruction_following)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "kimi-k2.6",
+   "benchmark": "arena-legal",
+   "value": 1463.72,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_legal_and_government)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "kimi-k2.6",
+   "benchmark": "arena-math",
+   "value": 1479.41,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/math)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "kimi-k2.6",
+   "benchmark": "arena-medicine",
+   "value": 1473.47,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_medicine_and_healthcare)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "kimi-k2.6",
+   "benchmark": "arena-science",
+   "value": 1477.89,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_life_and_physical_and_social_science)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "kimi-k2.6",
+   "benchmark": "arena-software",
+   "value": 1502.99,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_software_and_it_services)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "kimi-k2.6",
+   "benchmark": "arena-text",
+   "value": 1460.76,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/overall)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "kimi-k2.6",
+   "benchmark": "arena-vision",
+   "value": 1265.37,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (vision_style_control/overall)",
+   "asOf": "2026-10-09"
+  },
+  {
+   "model": "kimi-k2.6",
+   "benchmark": "arena-webdev",
+   "value": 1509.24,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (webdev/overall)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "kimi-k2.6",
+   "benchmark": "arena-writing",
+   "value": 1440.9,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_writing_and_literature_and_language)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "kimi-k2.6",
+   "benchmark": "gpqa",
+   "value": 90.5,
+   "source": "https://www.codesota.com/browse/reasoning/multi-step-reasoning/gpqa",
+   "asOf": "2026-04-01",
+   "vendorReported": true
+  },
+  {
+   "model": "kimi-k3",
+   "benchmark": "arena-agent",
+   "value": 0.02,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (agent/overall)",
+   "asOf": "2026-10-14"
+  },
+  {
+   "model": "kimi-k3",
+   "benchmark": "arena-business",
+   "value": 1487.91,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_business_and_management_and_financial_operations)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "kimi-k3",
+   "benchmark": "arena-coding",
+   "value": 1538.89,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/coding)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "kimi-k3",
+   "benchmark": "arena-creative",
+   "value": 1460.43,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/creative_writing)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "kimi-k3",
+   "benchmark": "arena-expert",
+   "value": 1533.11,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/expert)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "kimi-k3",
+   "benchmark": "arena-hard",
+   "value": 1516.52,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/hard_prompts)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "kimi-k3",
+   "benchmark": "arena-instruct",
+   "value": 1487.99,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/instruction_following)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "kimi-k3",
+   "benchmark": "arena-legal",
+   "value": 1510.45,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_legal_and_government)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "kimi-k3",
+   "benchmark": "arena-math",
+   "value": 1500.21,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/math)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "kimi-k3",
+   "benchmark": "arena-medicine",
+   "value": 1513.38,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_medicine_and_healthcare)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "kimi-k3",
+   "benchmark": "arena-science",
+   "value": 1522.28,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_life_and_physical_and_social_science)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "kimi-k3",
+   "benchmark": "arena-software",
+   "value": 1524.57,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_software_and_it_services)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "kimi-k3",
+   "benchmark": "arena-text",
+   "value": 1488.1,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/overall)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "kimi-k3",
+   "benchmark": "arena-webdev",
+   "value": 1655.3,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (webdev/overall)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "kimi-k3",
+   "benchmark": "arena-writing",
+   "value": 1476.29,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_writing_and_literature_and_language)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "mistral-medium-3.5",
+   "benchmark": "arena-agent",
+   "value": -0.11,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (agent/overall)",
+   "asOf": "2026-10-14"
+  },
+  {
+   "model": "mistral-medium-3.5",
+   "benchmark": "arena-business",
+   "value": 1430.46,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_business_and_management_and_financial_operations)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "mistral-medium-3.5",
+   "benchmark": "arena-coding",
+   "value": 1477.9,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/coding)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "mistral-medium-3.5",
+   "benchmark": "arena-creative",
+   "value": 1400.58,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/creative_writing)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "mistral-medium-3.5",
+   "benchmark": "arena-expert",
+   "value": 1435.52,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/expert)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "mistral-medium-3.5",
+   "benchmark": "arena-hard",
+   "value": 1445.16,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/hard_prompts)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "mistral-medium-3.5",
+   "benchmark": "arena-instruct",
+   "value": 1422.04,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/instruction_following)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "mistral-medium-3.5",
+   "benchmark": "arena-legal",
+   "value": 1440.85,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_legal_and_government)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "mistral-medium-3.5",
+   "benchmark": "arena-math",
+   "value": 1427.54,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/math)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "mistral-medium-3.5",
+   "benchmark": "arena-medicine",
+   "value": 1419.93,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_medicine_and_healthcare)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "mistral-medium-3.5",
+   "benchmark": "arena-science",
+   "value": 1436.62,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_life_and_physical_and_social_science)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "mistral-medium-3.5",
+   "benchmark": "arena-software",
+   "value": 1468.74,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_software_and_it_services)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "mistral-medium-3.5",
+   "benchmark": "arena-text",
+   "value": 1426.61,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/overall)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "mistral-medium-3.5",
+   "benchmark": "arena-vision",
+   "value": 1200.39,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (vision_style_control/overall)",
+   "asOf": "2026-10-09"
+  },
+  {
+   "model": "mistral-medium-3.5",
+   "benchmark": "arena-webdev",
+   "value": 1263.38,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (webdev/overall)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "mistral-medium-3.5",
+   "benchmark": "arena-writing",
+   "value": 1405.79,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_style_control/industry_writing_and_literature_and_language)",
+   "asOf": "2026-10-13"
+  },
+  {
+   "model": "nano-banana-2.1",
+   "benchmark": "arena-t2i",
+   "value": 1327.78,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_to_image/overall)",
+   "asOf": "2026-10-07"
+  },
+  {
+   "model": "nano-banana-2",
+   "benchmark": "arena-t2i",
+   "value": 1261.76,
+   "source": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset (text_to_image/overall)",
+   "asOf": "2026-10-07"
+  }
+ ],
+ "weights": {
+  "coding": {
+   "arena-agent": 0.2,
+   "swe-bench-pro": 0.2,
+   "terminal-bench-2": 0.15,
+   "arena-coding": 0.15,
+   "arena-software": 0.1,
+   "swe-bench-verified": 0.05,
+   "private": 0.15
+  },
+  "webdev": {
+   "arena-webdev": 0.55,
+   "arena-agent": 0.15,
+   "swe-bench-pro": 0.1,
+   "arena-coding": 0.05,
+   "private": 0.15
+  },
+  "ui-ux": {
+   "arena-webdev": 0.65,
+   "arena-vision": 0.1,
+   "arena-creative": 0.05,
+   "private": 0.2
+  },
+  "infra": {
+   "terminal-bench-2": 0.4,
+   "arena-agent": 0.2,
+   "arena-software": 0.1,
+   "swe-bench-pro": 0.15,
+   "private": 0.15
+  },
+  "security": {
+   "terminal-bench-2": 0.3,
+   "arena-software": 0.15,
+   "arena-expert": 0.15,
+   "arena-agent": 0.15,
+   "gpqa": 0.1,
+   "private": 0.15
+  },
+  "data": {
+   "arena-math": 0.25,
+   "arena-coding": 0.25,
+   "gpqa": 0.15,
+   "arena-agent": 0.2,
+   "private": 0.15
+  },
+  "research": {
+   "arena-search": 0.3,
+   "arena-expert": 0.15,
+   "arena-science": 0.1,
+   "arena-document": 0.1,
+   "gpqa": 0.1,
+   "arena-hard": 0.1,
+   "private": 0.15
+  },
+  "seo": {
+   "arena-search": 0.3,
+   "arena-writing": 0.15,
+   "arena-creative": 0.1,
+   "arena-business": 0.15,
+   "arena-webdev": 0.15,
+   "private": 0.15
+  },
+  "writing": {
+   "arena-writing": 0.35,
+   "arena-creative": 0.35,
+   "arena-instruct": 0.15,
+   "private": 0.15
+  },
+  "business": {
+   "arena-business": 0.45,
+   "arena-expert": 0.15,
+   "arena-hard": 0.1,
+   "arena-search": 0.15,
+   "private": 0.15
+  },
+  "legal": {
+   "arena-legal": 0.45,
+   "arena-document": 0.15,
+   "arena-expert": 0.15,
+   "arena-hard": 0.1,
+   "private": 0.15
+  },
+  "health": {
+   "arena-medicine": 0.45,
+   "arena-expert": 0.15,
+   "gpqa": 0.1,
+   "arena-search": 0.15,
+   "private": 0.15
+  },
+  "biomed": {
+   "arena-science": 0.3,
+   "arena-medicine": 0.2,
+   "gpqa": 0.25,
+   "arena-expert": 0.1,
+   "private": 0.15
+  },
+  "image": {
+   "arena-t2i": 0.85,
+   "private": 0.15
+  },
+  "3d": {
+   "arena-webdev": 0.35,
+   "arena-coding": 0.2,
+   "arena-agent": 0.2,
+   "arena-math": 0.05,
+   "private": 0.2
+  },
+  "general": {
+   "arena-text": 0.4,
+   "arena-hard": 0.2,
+   "arena-instruct": 0.1,
+   "arena-agent": 0.15,
+   "private": 0.15
+  }
+ },
+ "sources": [
+  {
+   "id": "arena",
+   "ok": true,
+   "rows": 5784,
+   "fetchedAt": "2026-10-15T10:57:23.339Z",
+   "unmatched": [
+    "qwen3.8-max-0902",
+    "qwen3.8-max",
+    "muse-spark-1.3-max",
+    "Muse Wonder (Max)",
+    "muse-wonder-max",
+    "muse-spark-1.2 (xHigh)",
+    "glm-5.3-flash",
+    "muse-spark",
+    "muse-spark-1.1",
+    "grok-imagine-image-2.0 (canvas)",
+    "mai-image-2.6",
+    "reve-2.1",
+    "grok-imagine-image-2.0 (20260801)",
+    "muse-image",
+    "reve-2.0",
+    "seedream-5.0-pro"
+   ]
+  },
+  {
+   "id": "seal",
+   "ok": true,
+   "rows": 24,
+   "fetchedAt": "2026-10-15T10:57:23.339Z",
+   "unmatched": [
+    "Muse Spark*",
+    "claude-4-Sonnet",
+    "gpt-5-2025-08-07 (High)",
+    "gpt-5.2-codex",
+    "qwen3-coder-480b-a35b",
+    "minimax-2.1",
+    "gpt-5.2",
+    "kimi-k2-instruct",
+    "qwen3-235b-a22b",
+    "deepseek-v3p2",
+    "gemma-3-27b-it",
+    "llama3-1-405b-instruct",
+    "glm-4.6",
+    "llama4-maverick-17b-instruct",
+    "codestral-2405"
+   ]
+  },
+  {
+   "id": "codesota",
+   "ok": true,
+   "rows": 144,
+   "fetchedAt": "2026-10-15T10:57:23.339Z",
+   "unmatched": [
+    "Junie CLI / Multiple",
+    "Claude Mythos Preview",
+    "MiniMax M2.5",
+    "GPT-5.2",
+    "Qwen3.6 Plus",
+    "MiMo-V2-Pro",
+    "GPT-5",
+    "Grok 4",
+    "Gemini 2.5 Pro",
+    "DeepSeek-V3.2-Speciale",
+    "Gemma 4 31B"
+   ]
+  }
+ ]
+}
