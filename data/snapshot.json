@@ -1,6 +1,6 @@
 {
- "version": "866f4f25bcc3fb47",
- "generatedAt": "2026-10-19T10:49:36.645Z",
+ "version": "f3f284f458e5938c",
+ "generatedAt": "2026-10-20T10:07:03.764Z",
  "benchmarks": [
   {
    "id": "arena-webdev",
@@ -670,6 +670,20 @@
    "relativeCost": 1.5
   },
   {
+   "id": "gemini-1-5-flash",
+   "label": "Gemini 1.5 Flash",
+   "vendor": "Google",
+   "family": "gemini-flash",
+   "version": [
+    1,
+    5
+   ],
+   "aliases": [],
+   "routes": [],
+   "costTier": "metered",
+   "relativeCost": 1
+  },
+  {
    "id": "gemini-1-5-pro",
    "label": "Gemini 1.5 Pro",
    "vendor": "Google",
@@ -684,6 +698,21 @@
    "relativeCost": 3
   },
   {
+   "id": "gemini-2-0-flash",
+   "label": "Gemini 2.0 Flash",
+   "vendor": "Google",
+   "family": "gemini-flash",
+   "version": [
+    2,
+    0
+   ],
+   "inheritsFrom": "gemini-1-5-flash",
+   "aliases": [],
+   "routes": [],
+   "costTier": "metered",
+   "relativeCost": 1
+  },
+  {
    "id": "gemini-2-5-flash",
    "label": "Gemini 2.5 Flash",
    "vendor": "Google",
@@ -692,6 +721,7 @@
     2,
     5
    ],
+   "inheritsFrom": "gemini-2-0-flash",
    "aliases": [],
    "routes": [],
    "costTier": "metered",
@@ -1711,6 +1741,17 @@
    "relativeCost": 3
   },
   {
+   "id": "muse-wonder-full",
+   "label": "Muse Wonder Full",
+   "vendor": "Meta",
+   "family": "muse-wonder-full",
+   "version": [],
+   "aliases": [],
+   "routes": [],
+   "costTier": "metered",
+   "relativeCost": 3
+  },
+  {
    "id": "qwen-image-2-1",
    "label": "Qwen Image 2.1",
    "vendor": "Alibaba",
@@ -1978,7 +2019,7 @@
    "benchmark": "arena-agent",
    "value": 0.14,
    "source": "lmarena-ai/leaderboard-dataset (agent/overall)",
-   "asOf": "2026-10-16",
+   "asOf": "2026-10-19",
    "ci": 0.02
   },
   {
@@ -2096,18 +2137,18 @@
   {
    "model": "claude-fable-5-1",
    "benchmark": "arena-vision",
-   "value": 1286.41,
+   "value": 1287.59,
    "source": "lmarena-ai/leaderboard-dataset (vision_style_control/overall)",
-   "asOf": "2026-10-09",
-   "ci": 9.66
+   "asOf": "2026-10-19",
+   "ci": 9.32
   },
   {
    "model": "claude-fable-5-1",
    "benchmark": "arena-webdev",
-   "value": 1742.29,
+   "value": 1742.7,
    "source": "lmarena-ai/leaderboard-dataset (webdev/overall)",
-   "asOf": "2026-10-18",
-   "ci": 8.93
+   "asOf": "2026-10-19",
+   "ci": 8.92
   },
   {
    "model": "claude-fable-5-1",
@@ -2122,7 +2163,7 @@
    "benchmark": "arena-agent",
    "value": 0.08,
    "source": "lmarena-ai/leaderboard-dataset (agent/overall)",
-   "asOf": "2026-10-16",
+   "asOf": "2026-10-19",
    "ci": 0.01
   },
   {
@@ -2240,18 +2281,18 @@
   {
    "model": "claude-fable-5",
    "benchmark": "arena-vision",
-   "value": 1307.97,
+   "value": 1308.71,
    "source": "lmarena-ai/leaderboard-dataset (vision_style_control/overall)",
-   "asOf": "2026-10-09",
-   "ci": 7.16
+   "asOf": "2026-10-19",
+   "ci": 7.06
   },
   {
    "model": "claude-fable-5",
    "benchmark": "arena-webdev",
-   "value": 1624.5,
+   "value": 1624.28,
    "source": "lmarena-ai/leaderboard-dataset (webdev/overall)",
-   "asOf": "2026-10-18",
-   "ci": 6.15
+   "asOf": "2026-10-19",
+   "ci": 6.13
   },
   {
    "model": "claude-fable-5",
@@ -2360,9 +2401,9 @@
   {
    "model": "claude-haiku-3-5",
    "benchmark": "arena-vision",
-   "value": 1126.6,
+   "value": 1127.41,
    "source": "lmarena-ai/leaderboard-dataset (vision_style_control/overall)",
-   "asOf": "2026-10-09",
+   "asOf": "2026-10-19",
    "ci": 16.05
   },
   {
@@ -2480,9 +2521,9 @@
   {
    "model": "claude-haiku-3",
    "benchmark": "arena-vision",
-   "value": 999.6,
+   "value": 999.71,
    "source": "lmarena-ai/leaderboard-dataset (vision_style_control/overall)",
-   "asOf": "2026-10-09",
+   "asOf": "2026-10-19",
    "ci": 12.45
   },
   {
@@ -2602,7 +2643,7 @@
    "benchmark": "arena-webdev",
    "value": 1330.37,
    "source": "lmarena-ai/leaderboard-dataset (webdev/overall)",
-   "asOf": "2026-10-18",
+   "asOf": "2026-10-19",
    "ci": 4.92
   },
   {
@@ -2618,7 +2659,7 @@
    "benchmark": "swe-bench-pro",
    "value": 39.45,
    "source": "https://scale.com/leaderboard/swe_bench_pro_public",
-   "asOf": "2026-10-19",
+   "asOf": "2026-10-20",
    "ci": 3.55
   },
   {
@@ -2634,16 +2675,16 @@
    "benchmark": "arena-agent",
    "value": 0.01,
    "source": "lmarena-ai/leaderboard-dataset (agent/overall)",
-   "asOf": "2026-10-16",
+   "asOf": "2026-10-19",
    "ci": 0.01
   },
   {
    "model": "claude-haiku-5-5",
    "benchmark": "arena-webdev",
-   "value": 1585.99,
+   "value": 1586.15,
    "source": "lmarena-ai/leaderboard-dataset (webdev/overall)",
-   "asOf": "2026-10-18",
-   "ci": 11.12
+   "asOf": "2026-10-19",
+   "ci": 10.91
   },
   {
    "model": "claude-mythos",
@@ -2760,9 +2801,9 @@
   {
    "model": "claude-opus-4-1",
    "benchmark": "arena-webdev",
-   "value": 1390.5,
+   "value": 1390.29,
    "source": "lmarena-ai/leaderboard-dataset (webdev/overall)",
-   "asOf": "2026-10-18",
+   "asOf": "2026-10-19",
    "ci": 10.73
   },
   {
@@ -2896,9 +2937,9 @@
   {
    "model": "claude-opus-4-5",
    "benchmark": "arena-webdev",
-   "value": 1493.79,
+   "value": 1493.73,
    "source": "lmarena-ai/leaderboard-dataset (webdev/overall)",
-   "asOf": "2026-10-18",
+   "asOf": "2026-10-19",
    "ci": 8.28
   },
   {
@@ -2922,7 +2963,7 @@
    "benchmark": "swe-bench-pro",
    "value": 45.89,
    "source": "https://scale.com/leaderboard/swe_bench_pro_public",
-   "asOf": "2026-10-19",
+   "asOf": "2026-10-20",
    "ci": 3.6
   },
   {
@@ -3048,17 +3089,17 @@
   {
    "model": "claude-opus-4-6",
    "benchmark": "arena-vision",
-   "value": 1299.23,
+   "value": 1299.07,
    "source": "lmarena-ai/leaderboard-dataset (vision_style_control/overall)",
-   "asOf": "2026-10-09",
-   "ci": 6.46
+   "asOf": "2026-10-19",
+   "ci": 6.43
   },
   {
    "model": "claude-opus-4-6",
    "benchmark": "arena-webdev",
-   "value": 1546.62,
+   "value": 1546.56,
    "source": "lmarena-ai/leaderboard-dataset (webdev/overall)",
-   "asOf": "2026-10-18",
+   "asOf": "2026-10-19",
    "ci": 5.47
   },
   {
@@ -3082,7 +3123,7 @@
    "benchmark": "swe-bench-pro",
    "value": 51.9,
    "source": "https://scale.com/leaderboard/swe_bench_pro_public",
-   "asOf": "2026-10-19",
+   "asOf": "2026-10-20",
    "ci": 3.61
   },
   {
@@ -3215,17 +3256,17 @@
   {
    "model": "claude-opus-4-7",
    "benchmark": "arena-vision",
-   "value": 1298.22,
+   "value": 1298.72,
    "source": "lmarena-ai/leaderboard-dataset (vision_style_control/overall)",
-   "asOf": "2026-10-09",
-   "ci": 6.6
+   "asOf": "2026-10-19",
+   "ci": 6.58
   },
   {
    "model": "claude-opus-4-7",
    "benchmark": "arena-webdev",
-   "value": 1557.83,
+   "value": 1557.87,
    "source": "lmarena-ai/leaderboard-dataset (webdev/overall)",
-   "asOf": "2026-10-18",
+   "asOf": "2026-10-19",
    "ci": 5.75
   },
   {
@@ -3359,17 +3400,17 @@
   {
    "model": "claude-opus-4-8",
    "benchmark": "arena-vision",
-   "value": 1285.63,
+   "value": 1285.74,
    "source": "lmarena-ai/leaderboard-dataset (vision_style_control/overall)",
-   "asOf": "2026-10-09",
-   "ci": 6.5
+   "asOf": "2026-10-19",
+   "ci": 6.48
   },
   {
    "model": "claude-opus-4-8",
    "benchmark": "arena-webdev",
-   "value": 1555.94,
+   "value": 1555.88,
    "source": "lmarena-ai/leaderboard-dataset (webdev/overall)",
-   "asOf": "2026-10-18",
+   "asOf": "2026-10-19",
    "ci": 5.76
   },
   {
@@ -3487,10 +3528,10 @@
   {
    "model": "claude-opus-4",
    "benchmark": "arena-vision",
-   "value": 1207.53,
+   "value": 1207.5,
    "source": "lmarena-ai/leaderboard-dataset (vision_style_control/overall)",
-   "asOf": "2026-10-09",
-   "ci": 16.07
+   "asOf": "2026-10-19",
+   "ci": 16.06
   },
   {
    "model": "claude-opus-4",
@@ -3519,9 +3560,9 @@
   {
    "model": "claude-opus-5-5",
    "benchmark": "arena-agent",
-   "value": 0.19,
+   "value": 0.2,
    "source": "lmarena-ai/leaderboard-dataset (agent/overall)",
-   "asOf": "2026-10-16",
+   "asOf": "2026-10-19",
    "ci": 0.03
   },
   {
@@ -3631,18 +3672,18 @@
   {
    "model": "claude-opus-5-5",
    "benchmark": "arena-vision",
-   "value": 1292.69,
+   "value": 1292.96,
    "source": "lmarena-ai/leaderboard-dataset (vision_style_control/overall)",
-   "asOf": "2026-10-09",
-   "ci": 12.73
+   "asOf": "2026-10-19",
+   "ci": 11.75
   },
   {
    "model": "claude-opus-5-5",
    "benchmark": "arena-webdev",
-   "value": 1806.2,
+   "value": 1807.31,
    "source": "lmarena-ai/leaderboard-dataset (webdev/overall)",
-   "asOf": "2026-10-18",
-   "ci": 13.92
+   "asOf": "2026-10-19",
+   "ci": 13.84
   },
   {
    "model": "claude-opus-5-5",
@@ -3655,9 +3696,9 @@
   {
    "model": "claude-opus-5",
    "benchmark": "arena-agent",
-   "value": 0.09,
+   "value": 0.08,
    "source": "lmarena-ai/leaderboard-dataset (agent/overall)",
-   "asOf": "2026-10-16",
+   "asOf": "2026-10-19",
    "ci": 0.02
   },
   {
@@ -3775,18 +3816,18 @@
   {
    "model": "claude-opus-5",
    "benchmark": "arena-vision",
-   "value": 1287.42,
+   "value": 1287.86,
    "source": "lmarena-ai/leaderboard-dataset (vision_style_control/overall)",
-   "asOf": "2026-10-09",
-   "ci": 6.78
+   "asOf": "2026-10-19",
+   "ci": 6.65
   },
   {
    "model": "claude-opus-5",
    "benchmark": "arena-webdev",
-   "value": 1689.63,
+   "value": 1688.86,
    "source": "lmarena-ai/leaderboard-dataset (webdev/overall)",
-   "asOf": "2026-10-18",
-   "ci": 6.21
+   "asOf": "2026-10-19",
+   "ci": 6.2
   },
   {
    "model": "claude-opus-5",
@@ -3895,10 +3936,10 @@
   {
    "model": "claude-sonnet-3-5",
    "benchmark": "arena-vision",
-   "value": 1160.4,
+   "value": 1160.75,
    "source": "lmarena-ai/leaderboard-dataset (vision_style_control/overall)",
-   "asOf": "2026-10-09",
-   "ci": 7.92
+   "asOf": "2026-10-19",
+   "ci": 7.94
   },
   {
    "model": "claude-sonnet-3-5",
@@ -4023,10 +4064,10 @@
   {
    "model": "claude-sonnet-3-7",
    "benchmark": "arena-vision",
-   "value": 1192.63,
+   "value": 1192.66,
    "source": "lmarena-ai/leaderboard-dataset (vision_style_control/overall)",
-   "asOf": "2026-10-09",
-   "ci": 15.5
+   "asOf": "2026-10-19",
+   "ci": 15.51
   },
   {
    "model": "claude-sonnet-3-7",
@@ -4143,10 +4184,10 @@
   {
    "model": "claude-sonnet-3",
    "benchmark": "arena-vision",
-   "value": 1016.11,
+   "value": 1016.35,
    "source": "lmarena-ai/leaderboard-dataset (vision_style_control/overall)",
-   "asOf": "2026-10-09",
-   "ci": 11.39
+   "asOf": "2026-10-19",
+   "ci": 11.4
   },
   {
    "model": "claude-sonnet-3",
@@ -4271,9 +4312,9 @@
   {
    "model": "claude-sonnet-4-5",
    "benchmark": "arena-webdev",
-   "value": 1393.8,
+   "value": 1393.73,
    "source": "lmarena-ai/leaderboard-dataset (webdev/overall)",
-   "asOf": "2026-10-18",
+   "asOf": "2026-10-19",
    "ci": 7.71
   },
   {
@@ -4289,7 +4330,7 @@
    "benchmark": "swe-bench-pro",
    "value": 43.6,
    "source": "https://scale.com/leaderboard/swe_bench_pro_public",
-   "asOf": "2026-10-19",
+   "asOf": "2026-10-20",
    "ci": 3.6
   },
   {
@@ -4407,17 +4448,17 @@
   {
    "model": "claude-sonnet-4-6",
    "benchmark": "arena-vision",
-   "value": 1274.97,
+   "value": 1275.09,
    "source": "lmarena-ai/leaderboard-dataset (vision_style_control/overall)",
-   "asOf": "2026-10-09",
-   "ci": 6.17
+   "asOf": "2026-10-19",
+   "ci": 6.14
   },
   {
    "model": "claude-sonnet-4-6",
    "benchmark": "arena-webdev",
-   "value": 1523.03,
+   "value": 1522.96,
    "source": "lmarena-ai/leaderboard-dataset (webdev/overall)",
-   "asOf": "2026-10-18",
+   "asOf": "2026-10-19",
    "ci": 5.15
   },
   {
@@ -4543,10 +4584,10 @@
   {
    "model": "claude-sonnet-4",
    "benchmark": "arena-vision",
-   "value": 1206.19,
+   "value": 1206.55,
    "source": "lmarena-ai/leaderboard-dataset (vision_style_control/overall)",
-   "asOf": "2026-10-09",
-   "ci": 16.92
+   "asOf": "2026-10-19",
+   "ci": 16.93
   },
   {
    "model": "claude-sonnet-4",
@@ -4569,7 +4610,7 @@
    "benchmark": "swe-bench-pro",
    "value": 42.7,
    "source": "https://scale.com/leaderboard/swe_bench_pro_public",
-   "asOf": "2026-10-19",
+   "asOf": "2026-10-20",
    "ci": 3.59
   },
   {
@@ -4585,7 +4626,7 @@
    "benchmark": "arena-agent",
    "value": 0.13,
    "source": "lmarena-ai/leaderboard-dataset (agent/overall)",
-   "asOf": "2026-10-16",
+   "asOf": "2026-10-19",
    "ci": 0.03
   },
   {
@@ -4687,18 +4728,18 @@
   {
    "model": "claude-sonnet-5-5",
    "benchmark": "arena-vision",
-   "value": 1266.19,
+   "value": 1264.92,
    "source": "lmarena-ai/leaderboard-dataset (vision_style_control/overall)",
-   "asOf": "2026-10-09",
-   "ci": 13.71
+   "asOf": "2026-10-19",
+   "ci": 12.55
   },
   {
    "model": "claude-sonnet-5-5",
    "benchmark": "arena-webdev",
-   "value": 1767.85,
+   "value": 1768.33,
    "source": "lmarena-ai/leaderboard-dataset (webdev/overall)",
-   "asOf": "2026-10-18",
-   "ci": 12.9
+   "asOf": "2026-10-19",
+   "ci": 12.79
   },
   {
    "model": "claude-sonnet-5-5",
@@ -4711,9 +4752,9 @@
   {
    "model": "claude-sonnet-5",
    "benchmark": "arena-agent",
-   "value": 0.05,
+   "value": 0.04,
    "source": "lmarena-ai/leaderboard-dataset (agent/overall)",
-   "asOf": "2026-10-16",
+   "asOf": "2026-10-19",
    "ci": 0.02
   },
   {
@@ -4831,18 +4872,18 @@
   {
    "model": "claude-sonnet-5",
    "benchmark": "arena-vision",
-   "value": 1263.26,
+   "value": 1261.86,
    "source": "lmarena-ai/leaderboard-dataset (vision_style_control/overall)",
-   "asOf": "2026-10-09",
-   "ci": 6.92
+   "asOf": "2026-10-19",
+   "ci": 6.83
   },
   {
    "model": "claude-sonnet-5",
    "benchmark": "arena-webdev",
-   "value": 1540.65,
+   "value": 1540.41,
    "source": "lmarena-ai/leaderboard-dataset (webdev/overall)",
-   "asOf": "2026-10-18",
-   "ci": 5.97
+   "asOf": "2026-10-19",
+   "ci": 5.96
   },
   {
    "model": "claude-sonnet-5",
@@ -5191,9 +5232,9 @@
   {
    "model": "deepseek-v3-2",
    "benchmark": "arena-webdev",
-   "value": 1362.57,
+   "value": 1362.39,
    "source": "lmarena-ai/leaderboard-dataset (webdev/overall)",
-   "asOf": "2026-10-18",
+   "asOf": "2026-10-19",
    "ci": 9.1
   },
   {
@@ -5337,7 +5378,7 @@
    "benchmark": "arena-agent",
    "value": 0.03,
    "source": "lmarena-ai/leaderboard-dataset (agent/overall)",
-   "asOf": "2026-10-16",
+   "asOf": "2026-10-19",
    "ci": 0
   },
   {
@@ -5439,18 +5480,18 @@
   {
    "model": "deepseek-v4-1-flash",
    "benchmark": "arena-vision",
-   "value": 1260.32,
+   "value": 1261.36,
    "source": "lmarena-ai/leaderboard-dataset (vision_style_control/overall)",
-   "asOf": "2026-10-09",
-   "ci": 10.9
+   "asOf": "2026-10-19",
+   "ci": 10.28
   },
   {
    "model": "deepseek-v4-1-flash",
    "benchmark": "arena-webdev",
-   "value": 1670.43,
+   "value": 1664.33,
    "source": "lmarena-ai/leaderboard-dataset (webdev/overall)",
-   "asOf": "2026-10-18",
-   "ci": 16.96
+   "asOf": "2026-10-19",
+   "ci": 14.32
   },
   {
    "model": "deepseek-v4-1-flash",
@@ -5559,9 +5600,9 @@
   {
    "model": "deepseek-v4-flash",
    "benchmark": "arena-webdev",
-   "value": 1582.3,
+   "value": 1582.1,
    "source": "lmarena-ai/leaderboard-dataset (webdev/overall)",
-   "asOf": "2026-10-18",
+   "asOf": "2026-10-19",
    "ci": 9.29
   },
   {
@@ -5573,12 +5614,36 @@
    "ci": 6.53
   },
   {
+   "model": "gemini-1-5-flash",
+   "benchmark": "arena-vision",
+   "value": 1141.69,
+   "source": "lmarena-ai/leaderboard-dataset (vision_style_control/overall)",
+   "asOf": "2026-10-19",
+   "ci": 9.94
+  },
+  {
+   "model": "gemini-1-5-pro",
+   "benchmark": "arena-vision",
+   "value": 1179.47,
+   "source": "lmarena-ai/leaderboard-dataset (vision_style_control/overall)",
+   "asOf": "2026-10-19",
+   "ci": 9.08
+  },
+  {
    "model": "gemini-1-5-pro",
    "benchmark": "gpqa",
    "value": 46.2,
    "source": "https://www.codesota.com/browse/reasoning/multi-step-reasoning/gpqa",
    "asOf": "2026-03-01",
    "vendorReported": true
+  },
+  {
+   "model": "gemini-2-0-flash",
+   "benchmark": "arena-vision",
+   "value": 1172.04,
+   "source": "lmarena-ai/leaderboard-dataset (vision_style_control/overall)",
+   "asOf": "2026-10-19",
+   "ci": 7.23
   },
   {
    "model": "gemini-2-5-flash-image",
@@ -5687,10 +5752,10 @@
   {
    "model": "gemini-2-5-flash",
    "benchmark": "arena-vision",
-   "value": 1215.23,
+   "value": 1229.8,
    "source": "lmarena-ai/leaderboard-dataset (vision_style_control/overall)",
-   "asOf": "2026-10-09",
-   "ci": 4.61
+   "asOf": "2026-10-19",
+   "ci": 9.84
   },
   {
    "model": "gemini-2-5-flash",
@@ -5831,17 +5896,17 @@
   {
    "model": "gemini-2-5-pro",
    "benchmark": "arena-vision",
-   "value": 1247.61,
+   "value": 1247.64,
    "source": "lmarena-ai/leaderboard-dataset (vision_style_control/overall)",
-   "asOf": "2026-10-09",
-   "ci": 4.57
+   "asOf": "2026-10-19",
+   "ci": 4.55
   },
   {
    "model": "gemini-2-5-pro",
    "benchmark": "arena-webdev",
-   "value": 1226.43,
+   "value": 1226.32,
    "source": "lmarena-ai/leaderboard-dataset (webdev/overall)",
-   "asOf": "2026-10-18",
+   "asOf": "2026-10-19",
    "ci": 15.87
   },
   {
@@ -5889,7 +5954,7 @@
    "benchmark": "arena-agent",
    "value": -0.04,
    "source": "lmarena-ai/leaderboard-dataset (agent/overall)",
-   "asOf": "2026-10-16",
+   "asOf": "2026-10-19",
    "ci": 0.01
   },
   {
@@ -6007,17 +6072,17 @@
   {
    "model": "gemini-3-1-pro",
    "benchmark": "arena-vision",
-   "value": 1279.78,
+   "value": 1279.55,
    "source": "lmarena-ai/leaderboard-dataset (vision_style_control/overall)",
-   "asOf": "2026-10-09",
-   "ci": 5.18
+   "asOf": "2026-10-19",
+   "ci": 5.13
   },
   {
    "model": "gemini-3-1-pro",
    "benchmark": "arena-webdev",
-   "value": 1446.93,
+   "value": 1446.92,
    "source": "lmarena-ai/leaderboard-dataset (webdev/overall)",
-   "asOf": "2026-10-18",
+   "asOf": "2026-10-19",
    "ci": 5.06
   },
   {
@@ -6033,7 +6098,7 @@
    "benchmark": "swe-bench-pro",
    "value": 46.1,
    "source": "https://scale.com/leaderboard/swe_bench_pro_public",
-   "asOf": "2026-10-19",
+   "asOf": "2026-10-20",
    "ci": 3.6
   },
   {
@@ -6158,17 +6223,17 @@
   {
    "model": "gemini-3-5-flash",
    "benchmark": "arena-vision",
-   "value": 1285.3,
+   "value": 1282.39,
    "source": "lmarena-ai/leaderboard-dataset (vision_style_control/overall)",
-   "asOf": "2026-10-09",
-   "ci": 6.94
+   "asOf": "2026-10-19",
+   "ci": 6.8
   },
   {
    "model": "gemini-3-5-flash",
    "benchmark": "arena-webdev",
-   "value": 1499.46,
+   "value": 1499.43,
    "source": "lmarena-ai/leaderboard-dataset (webdev/overall)",
-   "asOf": "2026-10-18",
+   "asOf": "2026-10-19",
    "ci": 7.26
   },
   {
@@ -6294,17 +6359,17 @@
   {
    "model": "gemini-3-6-flash",
    "benchmark": "arena-vision",
-   "value": 1280.71,
+   "value": 1281.98,
    "source": "lmarena-ai/leaderboard-dataset (vision_style_control/overall)",
-   "asOf": "2026-10-09",
-   "ci": 8.17
+   "asOf": "2026-10-19",
+   "ci": 7.9
   },
   {
    "model": "gemini-3-6-flash",
    "benchmark": "arena-webdev",
-   "value": 1538.1,
+   "value": 1538.05,
    "source": "lmarena-ai/leaderboard-dataset (webdev/overall)",
-   "asOf": "2026-10-18",
+   "asOf": "2026-10-19",
    "ci": 7.49
   },
   {
@@ -6320,7 +6385,7 @@
    "benchmark": "arena-agent",
    "value": -0.01,
    "source": "lmarena-ai/leaderboard-dataset (agent/overall)",
-   "asOf": "2026-10-16",
+   "asOf": "2026-10-19",
    "ci": 0.01
   },
   {
@@ -6422,18 +6487,18 @@
   {
    "model": "gemini-3-7-flash",
    "benchmark": "arena-vision",
-   "value": 1296.87,
+   "value": 1295.17,
    "source": "lmarena-ai/leaderboard-dataset (vision_style_control/overall)",
-   "asOf": "2026-10-09",
-   "ci": 9.83
+   "asOf": "2026-10-19",
+   "ci": 9.23
   },
   {
    "model": "gemini-3-7-flash",
    "benchmark": "arena-webdev",
-   "value": 1590.1,
+   "value": 1590.78,
    "source": "lmarena-ai/leaderboard-dataset (webdev/overall)",
-   "asOf": "2026-10-18",
-   "ci": 6.8
+   "asOf": "2026-10-19",
+   "ci": 6.78
   },
   {
    "model": "gemini-3-7-flash",
@@ -6448,7 +6513,7 @@
    "benchmark": "arena-agent",
    "value": 0.04,
    "source": "lmarena-ai/leaderboard-dataset (agent/overall)",
-   "asOf": "2026-10-16",
+   "asOf": "2026-10-19",
    "ci": 0.01
   },
   {
@@ -6550,18 +6615,18 @@
   {
    "model": "gemini-3-8-flash",
    "benchmark": "arena-vision",
-   "value": 1289.13,
+   "value": 1291.04,
    "source": "lmarena-ai/leaderboard-dataset (vision_style_control/overall)",
-   "asOf": "2026-10-09",
-   "ci": 10.62
+   "asOf": "2026-10-19",
+   "ci": 9.81
   },
   {
    "model": "gemini-3-8-flash",
    "benchmark": "arena-webdev",
-   "value": 1585.71,
+   "value": 1584.7,
    "source": "lmarena-ai/leaderboard-dataset (webdev/overall)",
-   "asOf": "2026-10-18",
-   "ci": 7.4
+   "asOf": "2026-10-19",
+   "ci": 7.36
   },
   {
    "model": "gemini-3-8-flash",
@@ -6686,17 +6751,17 @@
   {
    "model": "gemini-3-flash",
    "benchmark": "arena-vision",
-   "value": 1272.82,
+   "value": 1272.54,
    "source": "lmarena-ai/leaderboard-dataset (vision_style_control/overall)",
-   "asOf": "2026-10-09",
-   "ci": 5.23
+   "asOf": "2026-10-19",
+   "ci": 5.2
   },
   {
    "model": "gemini-3-flash",
    "benchmark": "arena-webdev",
-   "value": 1440.29,
+   "value": 1440.01,
    "source": "lmarena-ai/leaderboard-dataset (webdev/overall)",
-   "asOf": "2026-10-18",
+   "asOf": "2026-10-19",
    "ci": 8.61
   },
   {
@@ -6720,7 +6785,7 @@
    "benchmark": "swe-bench-pro",
    "value": 34.63,
    "source": "https://scale.com/leaderboard/swe_bench_pro_public",
-   "asOf": "2026-10-19",
+   "asOf": "2026-10-20",
    "ci": 3.55
   },
   {
@@ -6846,17 +6911,17 @@
   {
    "model": "gemini-3-pro",
    "benchmark": "arena-vision",
-   "value": 1289.32,
+   "value": 1289.3,
    "source": "lmarena-ai/leaderboard-dataset (vision_style_control/overall)",
-   "asOf": "2026-10-09",
-   "ci": 7.4
+   "asOf": "2026-10-19",
+   "ci": 7.39
   },
   {
    "model": "gemini-3-pro",
    "benchmark": "arena-webdev",
-   "value": 1440.35,
+   "value": 1440.28,
    "source": "lmarena-ai/leaderboard-dataset (webdev/overall)",
-   "asOf": "2026-10-18",
+   "asOf": "2026-10-19",
    "ci": 8.45
   },
   {
@@ -6880,7 +6945,7 @@
    "benchmark": "swe-bench-pro",
    "value": 43.3,
    "source": "https://scale.com/leaderboard/swe_bench_pro_public",
-   "asOf": "2026-10-19",
+   "asOf": "2026-10-20",
    "ci": 3.6
   },
   {
@@ -6901,9 +6966,9 @@
   {
    "model": "gemini-4-argon",
    "benchmark": "arena-agent",
-   "value": 0.13,
+   "value": 0.12,
    "source": "lmarena-ai/leaderboard-dataset (agent/overall)",
-   "asOf": "2026-10-16",
+   "asOf": "2026-10-19",
    "ci": 0.01
   },
   {
@@ -7005,10 +7070,10 @@
   {
    "model": "gemini-4-argon",
    "benchmark": "arena-webdev",
-   "value": 1678.14,
+   "value": 1678.26,
    "source": "lmarena-ai/leaderboard-dataset (webdev/overall)",
-   "asOf": "2026-10-18",
-   "ci": 15.37
+   "asOf": "2026-10-19",
+   "ci": 15.59
   },
   {
    "model": "gemini-4-argon",
@@ -7133,17 +7198,17 @@
   {
    "model": "gemma-4-31b",
    "benchmark": "arena-vision",
-   "value": 1262.1,
+   "value": 1261.85,
    "source": "lmarena-ai/leaderboard-dataset (vision_style_control/overall)",
-   "asOf": "2026-10-09",
-   "ci": 5.77
+   "asOf": "2026-10-19",
+   "ci": 5.71
   },
   {
    "model": "gemma-4-31b",
    "benchmark": "arena-webdev",
-   "value": 1367.93,
+   "value": 1367.44,
    "source": "lmarena-ai/leaderboard-dataset (webdev/overall)",
-   "asOf": "2026-10-18",
+   "asOf": "2026-10-19",
    "ci": 6.23
   },
   {
@@ -7373,9 +7438,9 @@
   {
    "model": "glm-4-6",
    "benchmark": "arena-webdev",
-   "value": 1341.2,
+   "value": 1341.14,
    "source": "lmarena-ai/leaderboard-dataset (webdev/overall)",
-   "asOf": "2026-10-18",
+   "asOf": "2026-10-19",
    "ci": 10.8
   },
   {
@@ -7391,7 +7456,7 @@
    "benchmark": "swe-bench-pro",
    "value": 9.67,
    "source": "https://scale.com/leaderboard/swe_bench_pro_public",
-   "asOf": "2026-10-19",
+   "asOf": "2026-10-20",
    "ci": 2.15
   },
   {
@@ -7613,9 +7678,9 @@
   {
    "model": "glm-4-7",
    "benchmark": "arena-webdev",
-   "value": 1435.39,
+   "value": 1435.34,
    "source": "lmarena-ai/leaderboard-dataset (webdev/overall)",
-   "asOf": "2026-10-18",
+   "asOf": "2026-10-19",
    "ci": 12.04
   },
   {
@@ -7741,9 +7806,9 @@
   {
    "model": "glm-5-3-flash",
    "benchmark": "arena-agent",
-   "value": -0.01,
+   "value": -0.02,
    "source": "lmarena-ai/leaderboard-dataset (agent/overall)",
-   "asOf": "2026-10-16",
+   "asOf": "2026-10-19",
    "ci": 0.01
   },
   {
@@ -7845,18 +7910,18 @@
   {
    "model": "glm-5-3-flash",
    "benchmark": "arena-vision",
-   "value": 1273.33,
+   "value": 1271.15,
    "source": "lmarena-ai/leaderboard-dataset (vision_style_control/overall)",
-   "asOf": "2026-10-09",
-   "ci": 7.08
+   "asOf": "2026-10-19",
+   "ci": 6.4
   },
   {
    "model": "glm-5-3-flash",
    "benchmark": "arena-webdev",
-   "value": 1606.86,
+   "value": 1606.83,
    "source": "lmarena-ai/leaderboard-dataset (webdev/overall)",
-   "asOf": "2026-10-18",
-   "ci": 6.58
+   "asOf": "2026-10-19",
+   "ci": 6.56
   },
   {
    "model": "glm-5-3-flash",
@@ -7965,9 +8030,9 @@
   {
    "model": "glm-5",
    "benchmark": "arena-webdev",
-   "value": 1435.6,
+   "value": 1435.39,
    "source": "lmarena-ai/leaderboard-dataset (webdev/overall)",
-   "asOf": "2026-10-18",
+   "asOf": "2026-10-19",
    "ci": 8.15
   },
   {
@@ -7988,6 +8053,14 @@
   },
   {
    "model": "gpt-4-5",
+   "benchmark": "arena-vision",
+   "value": 1224.99,
+   "source": "lmarena-ai/leaderboard-dataset (vision_style_control/overall)",
+   "asOf": "2026-10-19",
+   "ci": 11.69
+  },
+  {
+   "model": "gpt-4-5",
    "benchmark": "gpqa",
    "value": 69.5,
    "source": "https://www.codesota.com/browse/reasoning/multi-step-reasoning/gpqa",
@@ -8005,9 +8078,9 @@
   {
    "model": "gpt-5-1-codex",
    "benchmark": "arena-webdev",
-   "value": 1337.06,
+   "value": 1337.24,
    "source": "lmarena-ai/leaderboard-dataset (webdev/overall)",
-   "asOf": "2026-10-18",
+   "asOf": "2026-10-19",
    "ci": 11.57
   },
   {
@@ -8133,18 +8206,18 @@
   {
    "model": "gpt-5-1",
    "benchmark": "arena-vision",
-   "value": 1251.36,
+   "value": 1251.2,
    "source": "lmarena-ai/leaderboard-dataset (vision_style_control/overall)",
-   "asOf": "2026-10-09",
-   "ci": 7.85
+   "asOf": "2026-10-19",
+   "ci": 7.83
   },
   {
    "model": "gpt-5-1",
    "benchmark": "arena-webdev",
-   "value": 1395.84,
+   "value": 1395.96,
    "source": "lmarena-ai/leaderboard-dataset (webdev/overall)",
-   "asOf": "2026-10-18",
-   "ci": 11.52
+   "asOf": "2026-10-19",
+   "ci": 11.53
   },
   {
    "model": "gpt-5-1",
@@ -8165,9 +8238,9 @@
   {
    "model": "gpt-5-2-codex",
    "benchmark": "arena-webdev",
-   "value": 1338.79,
+   "value": 1338.8,
    "source": "lmarena-ai/leaderboard-dataset (webdev/overall)",
-   "asOf": "2026-10-18",
+   "asOf": "2026-10-19",
    "ci": 8.93
   },
   {
@@ -8175,7 +8248,7 @@
    "benchmark": "swe-bench-pro",
    "value": 41.04,
    "source": "https://scale.com/leaderboard/swe_bench_pro_public",
-   "asOf": "2026-10-19",
+   "asOf": "2026-10-20",
    "ci": 3.57
   },
   {
@@ -8183,7 +8256,7 @@
    "benchmark": "swe-bench-pro",
    "value": 41.78,
    "source": "https://scale.com/leaderboard/swe_bench_pro_public",
-   "asOf": "2026-10-19",
+   "asOf": "2026-10-20",
    "ci": 3.49
   },
   {
@@ -8301,17 +8374,17 @@
   {
    "model": "gpt-5-2",
    "benchmark": "arena-vision",
-   "value": 1242.97,
+   "value": 1242.8,
    "source": "lmarena-ai/leaderboard-dataset (vision_style_control/overall)",
-   "asOf": "2026-10-09",
-   "ci": 6.11
+   "asOf": "2026-10-19",
+   "ci": 6.09
   },
   {
    "model": "gpt-5-2",
    "benchmark": "arena-webdev",
-   "value": 1416.83,
+   "value": 1416.79,
    "source": "lmarena-ai/leaderboard-dataset (webdev/overall)",
-   "asOf": "2026-10-18",
+   "asOf": "2026-10-19",
    "ci": 22.61
   },
   {
@@ -8327,7 +8400,7 @@
    "benchmark": "swe-bench-pro",
    "value": 29.94,
    "source": "https://scale.com/leaderboard/swe_bench_pro_public",
-   "asOf": "2026-10-19",
+   "asOf": "2026-10-20",
    "ci": 2.15
   },
   {
@@ -8341,9 +8414,9 @@
   {
    "model": "gpt-5-3-codex",
    "benchmark": "arena-webdev",
-   "value": 1406.67,
+   "value": 1406.56,
    "source": "lmarena-ai/leaderboard-dataset (webdev/overall)",
-   "asOf": "2026-10-18",
+   "asOf": "2026-10-19",
    "ci": 13.68
   },
   {
@@ -8358,7 +8431,7 @@
    "benchmark": "arena-agent",
    "value": 0.01,
    "source": "lmarena-ai/leaderboard-dataset (agent/overall)",
-   "asOf": "2026-10-16",
+   "asOf": "2026-10-19",
    "ci": 0.01
   },
   {
@@ -8476,18 +8549,18 @@
   {
    "model": "gpt-5-4",
    "benchmark": "arena-vision",
-   "value": 1284.99,
+   "value": 1284.14,
    "source": "lmarena-ai/leaderboard-dataset (vision_style_control/overall)",
-   "asOf": "2026-10-09",
-   "ci": 5.83
+   "asOf": "2026-10-19",
+   "ci": 5.76
   },
   {
    "model": "gpt-5-4",
    "benchmark": "arena-webdev",
-   "value": 1463.96,
+   "value": 1463.94,
    "source": "lmarena-ai/leaderboard-dataset (webdev/overall)",
-   "asOf": "2026-10-18",
-   "ci": 18.86
+   "asOf": "2026-10-19",
+   "ci": 18.89
   },
   {
    "model": "gpt-5-4",
@@ -8502,7 +8575,7 @@
    "benchmark": "swe-bench-pro",
    "value": 59.1,
    "source": "https://scale.com/leaderboard/swe_bench_pro_public",
-   "asOf": "2026-10-19",
+   "asOf": "2026-10-20",
    "ci": 3.56
   },
   {
@@ -8517,7 +8590,7 @@
    "benchmark": "arena-agent",
    "value": 0.03,
    "source": "lmarena-ai/leaderboard-dataset (agent/overall)",
-   "asOf": "2026-10-16",
+   "asOf": "2026-10-19",
    "ci": 0.01
   },
   {
@@ -8635,17 +8708,17 @@
   {
    "model": "gpt-5-5",
    "benchmark": "arena-vision",
-   "value": 1285.78,
+   "value": 1286.05,
    "source": "lmarena-ai/leaderboard-dataset (vision_style_control/overall)",
-   "asOf": "2026-10-09",
-   "ci": 5.86
+   "asOf": "2026-10-19",
+   "ci": 5.79
   },
   {
    "model": "gpt-5-5",
    "benchmark": "arena-webdev",
-   "value": 1512.59,
+   "value": 1512.57,
    "source": "lmarena-ai/leaderboard-dataset (webdev/overall)",
-   "asOf": "2026-10-18",
+   "asOf": "2026-10-19",
    "ci": 5.97
   },
   {
@@ -8668,7 +8741,7 @@
    "benchmark": "arena-agent",
    "value": 0.07,
    "source": "lmarena-ai/leaderboard-dataset (agent/overall)",
-   "asOf": "2026-10-16",
+   "asOf": "2026-10-19",
    "ci": 0.01
   },
   {
@@ -8786,17 +8859,17 @@
   {
    "model": "gpt-5-6-sol",
    "benchmark": "arena-vision",
-   "value": 1286.96,
+   "value": 1286.16,
    "source": "lmarena-ai/leaderboard-dataset (vision_style_control/overall)",
-   "asOf": "2026-10-09",
-   "ci": 7.45
+   "asOf": "2026-10-19",
+   "ci": 7.33
   },
   {
    "model": "gpt-5-6-sol",
    "benchmark": "arena-webdev",
-   "value": 1616.35,
+   "value": 1615.62,
    "source": "lmarena-ai/leaderboard-dataset (webdev/overall)",
-   "asOf": "2026-10-18",
+   "asOf": "2026-10-19",
    "ci": 5.89
   },
   {
@@ -8812,7 +8885,7 @@
    "benchmark": "arena-agent",
    "value": 0,
    "source": "lmarena-ai/leaderboard-dataset (agent/overall)",
-   "asOf": "2026-10-16",
+   "asOf": "2026-10-19",
    "ci": 0.01
   },
   {
@@ -8924,16 +8997,16 @@
    "benchmark": "arena-vision",
    "value": 1268.04,
    "source": "lmarena-ai/leaderboard-dataset (vision_style_control/overall)",
-   "asOf": "2026-10-09",
-   "ci": 7.45
+   "asOf": "2026-10-19",
+   "ci": 7.27
   },
   {
    "model": "gpt-5-6-terra",
    "benchmark": "arena-webdev",
-   "value": 1521.76,
+   "value": 1521.69,
    "source": "lmarena-ai/leaderboard-dataset (webdev/overall)",
-   "asOf": "2026-10-18",
-   "ci": 6.32
+   "asOf": "2026-10-19",
+   "ci": 6.31
   },
   {
    "model": "gpt-5-6-terra",
@@ -9058,17 +9131,17 @@
   {
    "model": "gpt-5",
    "benchmark": "arena-vision",
-   "value": 1210.04,
+   "value": 1210.72,
    "source": "lmarena-ai/leaderboard-dataset (vision_style_control/overall)",
-   "asOf": "2026-10-09",
+   "asOf": "2026-10-19",
    "ci": 7.06
   },
   {
    "model": "gpt-5",
    "benchmark": "arena-webdev",
-   "value": 1417.61,
+   "value": 1417.55,
    "source": "lmarena-ai/leaderboard-dataset (webdev/overall)",
-   "asOf": "2026-10-18",
+   "asOf": "2026-10-19",
    "ci": 15.59
   },
   {
@@ -9100,7 +9173,7 @@
    "benchmark": "arena-agent",
    "value": 0.14,
    "source": "lmarena-ai/leaderboard-dataset (agent/overall)",
-   "asOf": "2026-10-16",
+   "asOf": "2026-10-19",
    "ci": 0.02
   },
   {
@@ -9210,18 +9283,18 @@
   {
    "model": "gpt-6-1-sol",
    "benchmark": "arena-vision",
-   "value": 1294.05,
+   "value": 1293.53,
    "source": "lmarena-ai/leaderboard-dataset (vision_style_control/overall)",
-   "asOf": "2026-10-09",
-   "ci": 14.41
+   "asOf": "2026-10-19",
+   "ci": 12.94
   },
   {
    "model": "gpt-6-1-sol",
    "benchmark": "arena-webdev",
-   "value": 1754.34,
+   "value": 1753.08,
    "source": "lmarena-ai/leaderboard-dataset (webdev/overall)",
-   "asOf": "2026-10-18",
-   "ci": 13.06
+   "asOf": "2026-10-19",
+   "ci": 12.97
   },
   {
    "model": "gpt-6-1-sol",
@@ -9234,9 +9307,9 @@
   {
    "model": "gpt-6-astra",
    "benchmark": "arena-agent",
-   "value": 0.14,
+   "value": 0.15,
    "source": "lmarena-ai/leaderboard-dataset (agent/overall)",
-   "asOf": "2026-10-16",
+   "asOf": "2026-10-19",
    "ci": 0.02
   },
   {
@@ -9354,18 +9427,18 @@
   {
    "model": "gpt-6-astra",
    "benchmark": "arena-vision",
-   "value": 1285.99,
+   "value": 1284.82,
    "source": "lmarena-ai/leaderboard-dataset (vision_style_control/overall)",
-   "asOf": "2026-10-09",
-   "ci": 10.78
+   "asOf": "2026-10-19",
+   "ci": 10.33
   },
   {
    "model": "gpt-6-astra",
    "benchmark": "arena-webdev",
-   "value": 1775.65,
+   "value": 1773.78,
    "source": "lmarena-ai/leaderboard-dataset (webdev/overall)",
-   "asOf": "2026-10-18",
-   "ci": 10.18
+   "asOf": "2026-10-19",
+   "ci": 10.17
   },
   {
    "model": "gpt-6-astra",
@@ -9378,9 +9451,9 @@
   {
    "model": "gpt-6-sol",
    "benchmark": "arena-agent",
-   "value": 0.1,
+   "value": 0.09,
    "source": "lmarena-ai/leaderboard-dataset (agent/overall)",
-   "asOf": "2026-10-16",
+   "asOf": "2026-10-19",
    "ci": 0.02
   },
   {
@@ -9490,18 +9563,18 @@
   {
    "model": "gpt-6-sol",
    "benchmark": "arena-vision",
-   "value": 1270.4,
+   "value": 1266.05,
    "source": "lmarena-ai/leaderboard-dataset (vision_style_control/overall)",
-   "asOf": "2026-10-09",
-   "ci": 12.34
+   "asOf": "2026-10-19",
+   "ci": 11.35
   },
   {
    "model": "gpt-6-sol",
    "benchmark": "arena-webdev",
-   "value": 1682.36,
+   "value": 1683.06,
    "source": "lmarena-ai/leaderboard-dataset (webdev/overall)",
-   "asOf": "2026-10-18",
-   "ci": 10.41
+   "asOf": "2026-10-19",
+   "ci": 10.37
   },
   {
    "model": "gpt-6-sol",
@@ -9762,9 +9835,9 @@
   {
    "model": "grok-4",
    "benchmark": "arena-vision",
-   "value": 1184.04,
+   "value": 1184.2,
    "source": "lmarena-ai/leaderboard-dataset (vision_style_control/overall)",
-   "asOf": "2026-10-09",
+   "asOf": "2026-10-19",
    "ci": 7.36
   },
   {
@@ -9898,17 +9971,17 @@
   {
    "model": "kimi-k2-5",
    "benchmark": "arena-vision",
-   "value": 1252.14,
+   "value": 1252.36,
    "source": "lmarena-ai/leaderboard-dataset (vision_style_control/overall)",
-   "asOf": "2026-10-09",
-   "ci": 5.71
+   "asOf": "2026-10-19",
+   "ci": 5.68
   },
   {
    "model": "kimi-k2-5",
    "benchmark": "arena-webdev",
-   "value": 1436.8,
+   "value": 1436.64,
    "source": "lmarena-ai/leaderboard-dataset (webdev/overall)",
-   "asOf": "2026-10-18",
+   "asOf": "2026-10-19",
    "ci": 5.21
   },
   {
@@ -10034,17 +10107,17 @@
   {
    "model": "kimi-k2-6",
    "benchmark": "arena-vision",
-   "value": 1265.37,
+   "value": 1264.57,
    "source": "lmarena-ai/leaderboard-dataset (vision_style_control/overall)",
-   "asOf": "2026-10-09",
-   "ci": 6.84
+   "asOf": "2026-10-19",
+   "ci": 6.81
   },
   {
    "model": "kimi-k2-6",
    "benchmark": "arena-webdev",
-   "value": 1509.59,
+   "value": 1509.48,
    "source": "lmarena-ai/leaderboard-dataset (webdev/overall)",
-   "asOf": "2026-10-18",
+   "asOf": "2026-10-19",
    "ci": 7.24
   },
   {
@@ -10180,7 +10253,7 @@
    "benchmark": "arena-agent",
    "value": 0.02,
    "source": "lmarena-ai/leaderboard-dataset (agent/overall)",
-   "asOf": "2026-10-16",
+   "asOf": "2026-10-19",
    "ci": 0.01
   },
   {
@@ -10282,10 +10355,10 @@
   {
    "model": "kimi-k3",
    "benchmark": "arena-webdev",
-   "value": 1654.58,
+   "value": 1655.29,
    "source": "lmarena-ai/leaderboard-dataset (webdev/overall)",
-   "asOf": "2026-10-18",
-   "ci": 5.99
+   "asOf": "2026-10-19",
+   "ci": 5.98
   },
   {
    "model": "kimi-k3",
@@ -10332,7 +10405,7 @@
    "benchmark": "arena-agent",
    "value": -0.08,
    "source": "lmarena-ai/leaderboard-dataset (agent/overall)",
-   "asOf": "2026-10-16",
+   "asOf": "2026-10-19",
    "ci": 0.01
   },
   {
@@ -10434,10 +10507,10 @@
   {
    "model": "mimo-v2-5-pro",
    "benchmark": "arena-webdev",
-   "value": 1480.76,
+   "value": 1480.26,
    "source": "lmarena-ai/leaderboard-dataset (webdev/overall)",
-   "asOf": "2026-10-18",
-   "ci": 5.23
+   "asOf": "2026-10-19",
+   "ci": 5.22
   },
   {
    "model": "mimo-v2-5-pro",
@@ -10460,7 +10533,7 @@
    "benchmark": "arena-agent",
    "value": 0.04,
    "source": "lmarena-ai/leaderboard-dataset (agent/overall)",
-   "asOf": "2026-10-16",
+   "asOf": "2026-10-19",
    "ci": 0.01
   },
   {
@@ -10562,18 +10635,18 @@
   {
    "model": "mimo-v2-6-pro",
    "benchmark": "arena-vision",
-   "value": 1246.04,
+   "value": 1244.56,
    "source": "lmarena-ai/leaderboard-dataset (vision_style_control/overall)",
-   "asOf": "2026-10-09",
-   "ci": 14.67
+   "asOf": "2026-10-19",
+   "ci": 14.77
   },
   {
    "model": "mimo-v2-6-pro",
    "benchmark": "arena-webdev",
-   "value": 1625.7,
+   "value": 1624.99,
    "source": "lmarena-ai/leaderboard-dataset (webdev/overall)",
-   "asOf": "2026-10-18",
-   "ci": 9.66
+   "asOf": "2026-10-19",
+   "ci": 9.58
   },
   {
    "model": "mimo-v2-6-pro",
@@ -10682,10 +10755,10 @@
   {
    "model": "mimo-v2-pro",
    "benchmark": "arena-webdev",
-   "value": 1434.04,
+   "value": 1433.97,
    "source": "lmarena-ai/leaderboard-dataset (webdev/overall)",
-   "asOf": "2026-10-18",
-   "ci": 8.14
+   "asOf": "2026-10-19",
+   "ci": 8.15
   },
   {
    "model": "mimo-v2-pro",
@@ -10914,9 +10987,9 @@
   {
    "model": "minimax-m2-1",
    "benchmark": "arena-webdev",
-   "value": 1384.27,
+   "value": 1384.3,
    "source": "lmarena-ai/leaderboard-dataset (webdev/overall)",
-   "asOf": "2026-10-18",
+   "asOf": "2026-10-19",
    "ci": 9.55
   },
   {
@@ -11034,9 +11107,9 @@
   {
    "model": "minimax-m2-5",
    "benchmark": "arena-webdev",
-   "value": 1386.35,
+   "value": 1386.34,
    "source": "lmarena-ai/leaderboard-dataset (webdev/overall)",
-   "asOf": "2026-10-18",
+   "asOf": "2026-10-19",
    "ci": 8.34
   },
   {
@@ -11154,10 +11227,10 @@
   {
    "model": "minimax-m2",
    "benchmark": "arena-webdev",
-   "value": 1297.1,
+   "value": 1297.06,
    "source": "lmarena-ai/leaderboard-dataset (webdev/overall)",
-   "asOf": "2026-10-18",
-   "ci": 10.92
+   "asOf": "2026-10-19",
+   "ci": 10.93
   },
   {
    "model": "minimax-m2",
@@ -11193,9 +11266,9 @@
   {
    "model": "muse-spark-1-1",
    "benchmark": "arena-agent",
-   "value": -0.06,
+   "value": -0.07,
    "source": "lmarena-ai/leaderboard-dataset (agent/overall)",
-   "asOf": "2026-10-16",
+   "asOf": "2026-10-19",
    "ci": 0.01
   },
   {
@@ -11305,17 +11378,17 @@
   {
    "model": "muse-spark-1-1",
    "benchmark": "arena-vision",
-   "value": 1279.95,
+   "value": 1280.01,
    "source": "lmarena-ai/leaderboard-dataset (vision_style_control/overall)",
-   "asOf": "2026-10-09",
-   "ci": 7.09
+   "asOf": "2026-10-19",
+   "ci": 6.96
   },
   {
    "model": "muse-spark-1-1",
    "benchmark": "arena-webdev",
-   "value": 1542.58,
+   "value": 1542.41,
    "source": "lmarena-ai/leaderboard-dataset (webdev/overall)",
-   "asOf": "2026-10-18",
+   "asOf": "2026-10-19",
    "ci": 7.62
   },
   {
@@ -11329,9 +11402,9 @@
   {
    "model": "muse-spark-1-2",
    "benchmark": "arena-agent",
-   "value": -0.06,
+   "value": -0.07,
    "source": "lmarena-ai/leaderboard-dataset (agent/overall)",
-   "asOf": "2026-10-16",
+   "asOf": "2026-10-19",
    "ci": 0.01
   },
   {
@@ -11433,17 +11506,17 @@
   {
    "model": "muse-spark-1-2",
    "benchmark": "arena-vision",
-   "value": 1292.89,
+   "value": 1292.67,
    "source": "lmarena-ai/leaderboard-dataset (vision_style_control/overall)",
-   "asOf": "2026-10-09",
+   "asOf": "2026-10-19",
    "ci": 14.34
   },
   {
    "model": "muse-spark-1-2",
    "benchmark": "arena-webdev",
-   "value": 1533.8,
+   "value": 1533.84,
    "source": "lmarena-ai/leaderboard-dataset (webdev/overall)",
-   "asOf": "2026-10-18",
+   "asOf": "2026-10-19",
    "ci": 13.65
   },
   {
@@ -11457,9 +11530,9 @@
   {
    "model": "muse-spark-1-3",
    "benchmark": "arena-agent",
-   "value": 0.04,
+   "value": 0.03,
    "source": "lmarena-ai/leaderboard-dataset (agent/overall)",
-   "asOf": "2026-10-16",
+   "asOf": "2026-10-19",
    "ci": 0.01
   },
   {
@@ -11569,18 +11642,18 @@
   {
    "model": "muse-spark-1-3",
    "benchmark": "arena-vision",
-   "value": 1289.72,
+   "value": 1289.59,
    "source": "lmarena-ai/leaderboard-dataset (vision_style_control/overall)",
-   "asOf": "2026-10-09",
-   "ci": 9.81
+   "asOf": "2026-10-19",
+   "ci": 9.21
   },
   {
    "model": "muse-spark-1-3",
    "benchmark": "arena-webdev",
-   "value": 1659.05,
+   "value": 1659.26,
    "source": "lmarena-ai/leaderboard-dataset (webdev/overall)",
-   "asOf": "2026-10-18",
-   "ci": 7.88
+   "asOf": "2026-10-19",
+   "ci": 7.86
   },
   {
    "model": "muse-spark-1-3",
@@ -11697,10 +11770,10 @@
   {
    "model": "muse-spark",
    "benchmark": "arena-vision",
-   "value": 1293.87,
+   "value": 1294.09,
    "source": "lmarena-ai/leaderboard-dataset (vision_style_control/overall)",
-   "asOf": "2026-10-09",
-   "ci": 9.12
+   "asOf": "2026-10-19",
+   "ci": 9.1
   },
   {
    "model": "muse-spark",
@@ -11715,7 +11788,7 @@
    "benchmark": "swe-bench-pro",
    "value": 55,
    "source": "https://scale.com/leaderboard/swe_bench_pro_public",
-   "asOf": "2026-10-19",
+   "asOf": "2026-10-20",
    "ci": 3.6
   },
   {
@@ -11727,11 +11800,19 @@
    "vendorReported": true
   },
   {
+   "model": "muse-wonder-full",
+   "benchmark": "arena-webdev",
+   "value": 1725.99,
+   "source": "lmarena-ai/leaderboard-dataset (webdev/overall)",
+   "asOf": "2026-10-19",
+   "ci": 16.09
+  },
+  {
    "model": "muse-wonder",
    "benchmark": "arena-agent",
-   "value": 0.05,
+   "value": 0.04,
    "source": "lmarena-ai/leaderboard-dataset (agent/overall)",
-   "asOf": "2026-10-16",
+   "asOf": "2026-10-19",
    "ci": 0.02
   },
   {
@@ -11825,10 +11906,10 @@
   {
    "model": "muse-wonder",
    "benchmark": "arena-webdev",
-   "value": 1650.3,
+   "value": 1651.51,
    "source": "lmarena-ai/leaderboard-dataset (webdev/overall)",
-   "asOf": "2026-10-18",
-   "ci": 13.97
+   "asOf": "2026-10-19",
+   "ci": 13.68
   },
   {
    "model": "muse-wonder",
@@ -12273,9 +12354,9 @@
   {
    "model": "qwen3-6-plus",
    "benchmark": "arena-webdev",
-   "value": 1461.66,
+   "value": 1461.49,
    "source": "lmarena-ai/leaderboard-dataset (webdev/overall)",
-   "asOf": "2026-10-18",
+   "asOf": "2026-10-19",
    "ci": 5.59
   },
   {
@@ -12393,9 +12474,9 @@
   {
    "model": "qwen3-6",
    "benchmark": "arena-webdev",
-   "value": 1482.49,
+   "value": 1482.34,
    "source": "lmarena-ai/leaderboard-dataset (webdev/overall)",
-   "asOf": "2026-10-18",
+   "asOf": "2026-10-19",
    "ci": 12.51
   },
   {
@@ -12411,7 +12492,7 @@
    "benchmark": "arena-agent",
    "value": -0.06,
    "source": "lmarena-ai/leaderboard-dataset (agent/overall)",
-   "asOf": "2026-10-16",
+   "asOf": "2026-10-19",
    "ci": 0.01
   },
   {
@@ -12513,9 +12594,9 @@
   {
    "model": "qwen3-7",
    "benchmark": "arena-webdev",
-   "value": 1515.64,
+   "value": 1515.49,
    "source": "lmarena-ai/leaderboard-dataset (webdev/overall)",
-   "asOf": "2026-10-18",
+   "asOf": "2026-10-19",
    "ci": 7.37
   },
   {
@@ -12531,7 +12612,7 @@
    "benchmark": "arena-agent",
    "value": 0.02,
    "source": "lmarena-ai/leaderboard-dataset (agent/overall)",
-   "asOf": "2026-10-16",
+   "asOf": "2026-10-19",
    "ci": 0.01
   },
   {
@@ -12641,18 +12722,18 @@
   {
    "model": "qwen3-8",
    "benchmark": "arena-vision",
-   "value": 1300.67,
+   "value": 1300,
    "source": "lmarena-ai/leaderboard-dataset (vision_style_control/overall)",
-   "asOf": "2026-10-09",
-   "ci": 7.47
+   "asOf": "2026-10-19",
+   "ci": 7.46
   },
   {
    "model": "qwen3-8",
    "benchmark": "arena-webdev",
-   "value": 1674.04,
+   "value": 1674.29,
    "source": "lmarena-ai/leaderboard-dataset (webdev/overall)",
-   "asOf": "2026-10-18",
-   "ci": 7.06
+   "asOf": "2026-10-19",
+   "ci": 7.03
   },
   {
    "model": "qwen3-8",
@@ -12667,7 +12748,7 @@
    "benchmark": "swe-bench-pro",
    "value": 38.7,
    "source": "https://scale.com/leaderboard/swe_bench_pro_public",
-   "asOf": "2026-10-19",
+   "asOf": "2026-10-20",
    "ci": 3.55
   },
   {
@@ -12958,20 +13039,20 @@
   {
    "id": "arena",
    "ok": true,
-   "rows": 5797,
-   "fetchedAt": "2026-10-19T10:49:36.645Z"
+   "rows": 5803,
+   "fetchedAt": "2026-10-20T10:07:03.764Z"
   },
   {
    "id": "seal",
    "ok": true,
    "rows": 24,
-   "fetchedAt": "2026-10-19T10:49:36.645Z"
+   "fetchedAt": "2026-10-20T10:07:03.764Z"
   },
   {
    "id": "codesota",
    "ok": true,
    "rows": 144,
-   "fetchedAt": "2026-10-19T10:49:36.645Z"
+   "fetchedAt": "2026-10-20T10:07:03.764Z"
   }
  ]
 }
