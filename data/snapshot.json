@@ -1,6 +1,6 @@
 {
- "version": "20e770c75d2ad9d9",
- "generatedAt": "2026-11-26T15:21:55.908Z",
+ "version": "2abaf84853cbff0d",
+ "generatedAt": "2026-11-27T15:09:42.722Z",
  "benchmarks": [
   {
    "id": "arena-webdev",
@@ -2627,7 +2627,7 @@
    "benchmark": "swe-bench-pro",
    "value": 39.45,
    "source": "https://scale.com/leaderboard/swe_bench_pro_public",
-   "asOf": "2026-11-26",
+   "asOf": "2026-11-27",
    "ci": 3.55
   },
   {
@@ -3027,7 +3027,7 @@
    "benchmark": "swe-bench-pro",
    "value": 45.89,
    "source": "https://scale.com/leaderboard/swe_bench_pro_public",
-   "asOf": "2026-11-26",
+   "asOf": "2026-11-27",
    "ci": 3.6
   },
   {
@@ -3187,7 +3187,7 @@
    "benchmark": "swe-bench-pro",
    "value": 51.9,
    "source": "https://scale.com/leaderboard/swe_bench_pro_public",
-   "asOf": "2026-11-26",
+   "asOf": "2026-11-27",
    "ci": 3.61
   },
   {
@@ -4394,7 +4394,7 @@
    "benchmark": "swe-bench-pro",
    "value": 43.6,
    "source": "https://scale.com/leaderboard/swe_bench_pro_public",
-   "asOf": "2026-11-26",
+   "asOf": "2026-11-27",
    "ci": 3.6
   },
   {
@@ -4674,7 +4674,7 @@
    "benchmark": "swe-bench-pro",
    "value": 42.7,
    "source": "https://scale.com/leaderboard/swe_bench_pro_public",
-   "asOf": "2026-11-26",
+   "asOf": "2026-11-27",
    "ci": 3.59
   },
   {
@@ -6418,7 +6418,7 @@
    "benchmark": "swe-bench-pro",
    "value": 46.1,
    "source": "https://scale.com/leaderboard/swe_bench_pro_public",
-   "asOf": "2026-11-26",
+   "asOf": "2026-11-27",
    "ci": 3.6
   },
   {
@@ -7121,7 +7121,7 @@
    "benchmark": "swe-bench-pro",
    "value": 34.63,
    "source": "https://scale.com/leaderboard/swe_bench_pro_public",
-   "asOf": "2026-11-26",
+   "asOf": "2026-11-27",
    "ci": 3.55
   },
   {
@@ -7281,7 +7281,7 @@
    "benchmark": "swe-bench-pro",
    "value": 43.3,
    "source": "https://scale.com/leaderboard/swe_bench_pro_public",
-   "asOf": "2026-11-26",
+   "asOf": "2026-11-27",
    "ci": 3.6
   },
   {
@@ -8008,7 +8008,7 @@
    "benchmark": "swe-bench-pro",
    "value": 9.67,
    "source": "https://scale.com/leaderboard/swe_bench_pro_public",
-   "asOf": "2026-11-26",
+   "asOf": "2026-11-27",
    "ci": 2.15
   },
   {
@@ -8648,7 +8648,7 @@
    "benchmark": "swe-bench-pro",
    "value": 41.04,
    "source": "https://scale.com/leaderboard/swe_bench_pro_public",
-   "asOf": "2026-11-26",
+   "asOf": "2026-11-27",
    "ci": 3.57
   },
   {
@@ -8656,7 +8656,7 @@
    "benchmark": "swe-bench-pro",
    "value": 41.78,
    "source": "https://scale.com/leaderboard/swe_bench_pro_public",
-   "asOf": "2026-11-26",
+   "asOf": "2026-11-27",
    "ci": 3.49
   },
   {
@@ -8800,7 +8800,7 @@
    "benchmark": "swe-bench-pro",
    "value": 29.94,
    "source": "https://scale.com/leaderboard/swe_bench_pro_public",
-   "asOf": "2026-11-26",
+   "asOf": "2026-11-27",
    "ci": 2.15
   },
   {
@@ -8960,7 +8960,7 @@
    "benchmark": "swe-bench-pro",
    "value": 59.1,
    "source": "https://scale.com/leaderboard/swe_bench_pro_public",
-   "asOf": "2026-11-26",
+   "asOf": "2026-11-27",
    "ci": 3.56
   },
   {
@@ -11990,7 +11990,7 @@
    "benchmark": "swe-bench-pro",
    "value": 55,
    "source": "https://scale.com/leaderboard/swe_bench_pro_public",
-   "asOf": "2026-11-26",
+   "asOf": "2026-11-27",
    "ci": 3.6
   },
   {
@@ -12718,7 +12718,7 @@
    "benchmark": "swe-bench-pro",
    "value": 38.7,
    "source": "https://scale.com/leaderboard/swe_bench_pro_public",
-   "asOf": "2026-11-26",
+   "asOf": "2026-11-27",
    "ci": 3.55
   },
   {
@@ -12994,19 +12994,19 @@
    "id": "arena",
    "ok": true,
    "rows": 5985,
-   "fetchedAt": "2026-11-26T15:21:55.908Z"
+   "fetchedAt": "2026-11-27T15:09:42.722Z"
   },
   {
    "id": "seal",
    "ok": true,
    "rows": 24,
-   "fetchedAt": "2026-11-26T15:21:55.908Z"
+   "fetchedAt": "2026-11-27T15:09:42.722Z"
   },
   {
    "id": "codesota",
    "ok": false,
    "rows": 0,
-   "fetchedAt": "2026-11-26T15:21:55.908Z"
+   "fetchedAt": "2026-11-27T15:09:42.722Z"
   }
  ]
 }
